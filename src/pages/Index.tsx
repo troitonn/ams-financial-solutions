@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import ServiceCard from '../components/ServiceCard';
-import { ChevronDown, CircleCheck, TrendingUp, ArrowRight, WhatsApp } from 'lucide-react';
+import { ChevronDown, CircleCheck, TrendingUp, ArrowRight } from 'lucide-react';
+import WhatsAppIcon from '../components/WhatsAppIcon';
 import {
   Carousel,
   CarouselContent,
@@ -21,7 +22,7 @@ const FloatingWhatsAppButton = () => (
     className="fixed bottom-6 right-6 z-50 bg-[#25D366] p-4 rounded-full shadow-lg hover:bg-[#1da750] transition-all duration-300 pulse-gold"
     aria-label="Contato via WhatsApp"
   >
-    <WhatsApp className="h-6 w-6 text-white" />
+    <WhatsAppIcon className="h-6 w-6 text-white" />
   </a>
 );
 

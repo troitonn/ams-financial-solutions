@@ -1,8 +1,8 @@
-
 import React, { useEffect, useState } from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import { CircleCheck, Send, WhatsApp } from 'lucide-react';
+import { CircleCheck, Send } from 'lucide-react';
+import WhatsAppIcon from '../components/WhatsAppIcon';
 import { toast } from 'sonner';
 
 const Contato = () => {
@@ -150,7 +150,7 @@ const Contato = () => {
                   onClick={handleWhatsAppClick} 
                   className="flex items-center justify-center w-full gap-2 bg-[#25D366] hover:bg-[#1da750] text-white py-3 px-4 rounded-lg transition-colors duration-300 mt-6"
                 >
-                  <WhatsApp size={20} />
+                  <WhatsAppIcon size={20} />
                   <span>Fale pelo WhatsApp</span>
                 </button>
               </div>
@@ -270,7 +270,7 @@ const Contato = () => {
                     onClick={handleWhatsAppClick}
                     className="px-4 py-2 bg-[#25D366] hover:bg-[#1da750] text-white rounded-md flex items-center justify-center"
                   >
-                    <WhatsApp size={20} />
+                    <WhatsAppIcon size={20} />
                   </button>
                 </div>
               </form>
