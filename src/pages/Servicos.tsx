@@ -1,12 +1,17 @@
-
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import { Capital, ChemicalIcon, RealEstateAgency, ExchangeRate, JudicialIcon } from '../components/ServiceIcons';
-
-const ServiceSection = ({ id, title, icon, description, isActive, onClick }: {
+const ServiceSection = ({
+  id,
+  title,
+  icon,
+  description,
+  isActive,
+  onClick
+}: {
   id: string;
   title: string;
   icon: React.ReactNode;
@@ -14,14 +19,7 @@ const ServiceSection = ({ id, title, icon, description, isActive, onClick }: {
   isActive: boolean;
   onClick: () => void;
 }) => {
-  return (
-    <div 
-      id={id}
-      className={`mb-24 scroll-mt-24 p-8 rounded-lg transition-all duration-300 ${
-        isActive ? 'bg-white shadow-lg border-t-4 border-ams-gold' : 'bg-gray-50 hover:bg-gray-100 cursor-pointer'
-      }`}
-      onClick={onClick}
-    >
+  return <div id={id} onClick={onClick} className="">
       <div className="flex flex-col md:flex-row md:items-center gap-6">
         <div className="flex-shrink-0">
           <div className={`p-4 rounded-full ${isActive ? 'bg-ams-gold text-ams-black' : 'bg-gray-200 text-gray-700'}`}>
@@ -29,27 +27,20 @@ const ServiceSection = ({ id, title, icon, description, isActive, onClick }: {
           </div>
         </div>
         <div>
-          <h2 className="text-2xl md:text-3xl font-bold mb-2">{title}</h2>
+          <h2 className="text-2xl md:text-3xl mb-2 font-bold text-yellow-400">{title}</h2>
           <p className="text-gray-600 mb-6">{description}</p>
           
-          {isActive && (
-            <div className="animate-fade-in">
-              <Link 
-                to="/contato" 
-                className="gold-button px-6 py-2 rounded-md font-medium inline-flex items-center"
-              >
+          {isActive && <div className="animate-fade-in">
+              <Link to="/contato" className="gold-button px-6 py-2 rounded-md font-medium inline-flex items-center">
                 Fale Conosco
               </Link>
-            </div>
-          )}
+            </div>}
         </div>
       </div>
       
-      {isActive && (
-        <div className="mt-8 animate-fade-in">
+      {isActive && <div className="mt-8 animate-fade-in">
           <div className="prose prose-lg max-w-none text-gray-700">
-            {id === 'capital' && (
-              <>
+            {id === 'capital' && <>
                 <p>
                   A A.M.S Negócios e Intermediação oferece um serviço especializado em capital de giro, 
                   projetado para ajudar empresas a manterem sua operação saudável e eficiente. 
@@ -70,11 +61,9 @@ const ServiceSection = ({ id, title, icon, description, isActive, onClick }: {
                   Seja para enfrentar desafios sazonais ou para alavancar novas oportunidades, estamos 
                   aqui para garantir que o capital de giro da sua empresa esteja sempre em equilíbrio.
                 </p>
-              </>
-            )}
+              </>}
             
-            {id === 'agronegocio' && (
-              <>
+            {id === 'agronegocio' && <>
                 <p>
                   A A.M.S Negócios e Intermediação se destaca na prestação de serviços de agoranegócio, 
                   oferecendo soluções financeiras especializadas para o setor agropecuário. Sabemos que o 
@@ -97,11 +86,9 @@ const ServiceSection = ({ id, title, icon, description, isActive, onClick }: {
                   brasileiro, fornecendo o capital e o apoio estratégico que você precisa para alcançar 
                   resultados excepcionais.
                 </p>
-              </>
-            )}
+              </>}
             
-            {id === 'real-estate' && (
-              <>
+            {id === 'real-estate' && <>
                 <p>
                   A AMS Negócios e Intermediação oferece serviços especializados em Real Estate, focados em 
                   maximizar o valor de investimentos imobiliários. Com uma abordagem estratégica e personalizada, 
@@ -127,11 +114,9 @@ const ServiceSection = ({ id, title, icon, description, isActive, onClick }: {
                   necessidades específicas e que impulsionem o crescimento e a valorização dos seus ativos 
                   imobiliários.
                 </p>
-              </>
-            )}
+              </>}
             
-            {id === 'trade-finance' && (
-              <>
+            {id === 'trade-finance' && <>
                 <p>
                   A A.M.S Negócios e Intermediação oferece um serviço especializado em Trader Finance, 
                   voltado para empresas que buscam otimizar suas operações financeiras em mercados complexos 
@@ -158,11 +143,9 @@ const ServiceSection = ({ id, title, icon, description, isActive, onClick }: {
                   de crescimento e rentabilidade. Estamos aqui para ajudar você a alcançar seus objetivos 
                   financeiros com precisão e eficácia.
                 </p>
-              </>
-            )}
+              </>}
             
-            {id === 'antecipacao' && (
-              <>
+            {id === 'antecipacao' && <>
                 <p>
                   A A.M.S Negócios e Intermediação oferece um serviço especializado em Antecipação de 
                   Créditos, uma solução financeira ideal para empresas que buscam otimizar seu fluxo de 
@@ -194,22 +177,17 @@ const ServiceSection = ({ id, title, icon, description, isActive, onClick }: {
                   explore novas oportunidades com a segurança que só a A.M.S Negócios e Intermediação 
                   pode oferecer.
                 </p>
-              </>
-            )}
+              </>}
           </div>
-        </div>
-      )}
-    </div>
-  );
+        </div>}
+    </div>;
 };
-
 const Servicos = () => {
   const location = useLocation();
   const [activeService, setActiveService] = useState('capital');
-  
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Check if there's a hash in the URL to activate specific service
     if (location.hash) {
       const serviceId = location.hash.substring(1); // Remove # from the hash
@@ -217,14 +195,15 @@ const Servicos = () => {
       setTimeout(() => {
         const element = document.getElementById(serviceId);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
         }
       }, 100);
     }
   }, [location]);
-
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <NavBar />
       
       {/* Hero Section */}
@@ -254,50 +233,15 @@ const Servicos = () => {
               do seu fluxo de caixa e impulsionem o crescimento do seu negócio.
             </p>
             
-            <ServiceSection
-              id="capital"
-              title="Capital de Giro"
-              icon={<Capital className="w-10 h-10" />}
-              description="Soluções financeiras para manter o fluxo de caixa saudável e as operações em pleno funcionamento."
-              isActive={activeService === 'capital'}
-              onClick={() => setActiveService('capital')}
-            />
+            <ServiceSection id="capital" title="Capital de Giro" icon={<Capital className="w-10 h-10" />} description="Soluções financeiras para manter o fluxo de caixa saudável e as operações em pleno funcionamento." isActive={activeService === 'capital'} onClick={() => setActiveService('capital')} />
             
-            <ServiceSection
-              id="agronegocio"
-              title="Agronegócio"
-              icon={<ChemicalIcon className="w-10 h-10" />}
-              description="Financiamentos e soluções específicas para produtores rurais e empresas do setor agrícola."
-              isActive={activeService === 'agronegocio'}
-              onClick={() => setActiveService('agronegocio')}
-            />
+            <ServiceSection id="agronegocio" title="Agronegócio" icon={<ChemicalIcon className="w-10 h-10" />} description="Financiamentos e soluções específicas para produtores rurais e empresas do setor agrícola." isActive={activeService === 'agronegocio'} onClick={() => setActiveService('agronegocio')} />
             
-            <ServiceSection
-              id="real-estate"
-              title="Real Estate"
-              icon={<RealEstateAgency className="w-10 h-10" />}
-              description="Estratégias de investimento e financiamento para projetos imobiliários de todos os portes."
-              isActive={activeService === 'real-estate'}
-              onClick={() => setActiveService('real-estate')}
-            />
+            <ServiceSection id="real-estate" title="Real Estate" icon={<RealEstateAgency className="w-10 h-10" />} description="Estratégias de investimento e financiamento para projetos imobiliários de todos os portes." isActive={activeService === 'real-estate'} onClick={() => setActiveService('real-estate')} />
             
-            <ServiceSection
-              id="trade-finance"
-              title="Trade Finance"
-              icon={<ExchangeRate className="w-10 h-10" />}
-              description="Suporte financeiro para operações de comércio internacional e gestão de riscos cambiais."
-              isActive={activeService === 'trade-finance'}
-              onClick={() => setActiveService('trade-finance')}
-            />
+            <ServiceSection id="trade-finance" title="Trade Finance" icon={<ExchangeRate className="w-10 h-10" />} description="Suporte financeiro para operações de comércio internacional e gestão de riscos cambiais." isActive={activeService === 'trade-finance'} onClick={() => setActiveService('trade-finance')} />
             
-            <ServiceSection
-              id="antecipacao"
-              title="Antecipação de Créditos"
-              icon={<JudicialIcon className="w-10 h-10" />}
-              description="Transforme recebíveis futuros em capital imediato para impulsionar seu negócio."
-              isActive={activeService === 'antecipacao'}
-              onClick={() => setActiveService('antecipacao')}
-            />
+            <ServiceSection id="antecipacao" title="Antecipação de Créditos" icon={<JudicialIcon className="w-10 h-10" />} description="Transforme recebíveis futuros em capital imediato para impulsionar seu negócio." isActive={activeService === 'antecipacao'} onClick={() => setActiveService('antecipacao')} />
           </div>
         </div>
       </section>
@@ -309,18 +253,13 @@ const Servicos = () => {
           <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
             Nossa equipe de especialistas está à disposição para ajudar sua empresa a alcançar novos patamares de sucesso financeiro.
           </p>
-          <Link 
-            to="/contato" 
-            className="gold-button px-8 py-3 rounded-md font-medium text-lg inline-flex items-center"
-          >
+          <Link to="/contato" className="gold-button px-8 py-3 rounded-md font-medium text-lg inline-flex items-center">
             Fale com um especialista
           </Link>
         </div>
       </section>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Servicos;
