@@ -33,7 +33,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     }
   };
   return <div className={`service-card p-6 rounded-full shadow-lg h-full flex flex-col ${className} transform transition-all duration-500 hover:translate-y-[-10px] hover:shadow-[0_0_25px_rgba(252,204,76,0.25)]`}>
-      <div className="flex flex-col items-center text-center rounded-sm my- px-0 mx-[30px]">
+      <div className="flex flex-col items-center text-center rounded-sm my- px-0 mx-0">
         <div className="bg-ams-black bg-opacity-70 p-5 rounded-full mb-6 border border-ams-gold/40 shadow-[0_0_15px_rgba(252,204,76,0.15)] animate-pulse-slow">
           {renderIcon()}
         </div>
