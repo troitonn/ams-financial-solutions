@@ -26,14 +26,14 @@ const ResultsSection = () => {
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-gold glow-text">Resultados em 2024</h2>
+        <div className="text-center mb-16 py-0 my-[20px]">
+          <h2 className="text-3xl font-bold mb-4 gradient-gold glow-text my-[2px] md:text-4xl">Resultados em 2024</h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
             Até o momento foram gerados pela A.M.S:
           </p>
         </div>
         
-        <div className="flex justify-center">
+        <div className="flex justify">
           <div className="glass-card p-10 text-center transform hover:scale-105 transition-all duration-500 border border-ams-gold/40 shadow-[0_0_30px_rgba(252,204,76,0.15)] animate-float-soft">
             <div className="gradient-gold text-4xl md:text-5xl lg:text-6xl font-bold mb-2 glow-text- rounded-sm">+R$50MM</div>
             <div className="text-3xl md:text-4xl text-ams-gold font-bold"></div>
