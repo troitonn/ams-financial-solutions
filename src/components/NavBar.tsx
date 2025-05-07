@@ -26,7 +26,7 @@ const NavBar = () => {
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-ams-black bg-opacity-90 backdrop-blur-md py-2 shadow-lg' 
+          ? 'bg-ams-black bg-opacity-90 backdrop-blur-md py-2 shadow-lg border-b border-ams-gold/20' 
           : 'bg-transparent py-4'
       }`}
     >
@@ -78,7 +78,7 @@ const NavBar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-ams-black mt-4 py-4 px-4 rounded-lg animate-fade-in">
+          <div className="md:hidden bg-ams-black mt-4 py-4 px-4 rounded-lg animate-fade-in glass-card border border-ams-gold/20">
             <div className="flex flex-col space-y-4">
               <Link 
                 to="/" 

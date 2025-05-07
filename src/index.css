@@ -45,6 +45,10 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
+  html {
+    @apply bg-ams-black text-white;
+  }
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -90,14 +94,14 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-ams-black text-white;
   }
 
   .gradient-background {
     background: linear-gradient(135deg, #111111 0%, #222222 100%);
   }
 
-  .gradient-text {
+  .gradient-gold {
     background: linear-gradient(90deg, #fccc4c 0%, #f8b64c 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -132,10 +136,56 @@
 
   .service-card {
     transition: all 0.3s ease;
+    @apply bg-ams-darkGray bg-opacity-50 border border-ams-gold/20;
   }
 
   .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(252, 204, 76, 0.2);
+    @apply border-ams-gold;
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 10px rgba(252, 204, 76, 0.5);
+  }
+  
+  .gradient-border {
+    position: relative;
+    border-radius: 0.5rem;
+    background: #111111;
+    background-clip: padding-box;
+  }
+  
+  .gradient-border::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    background: linear-gradient(90deg, #fccc4c, #f8b64c);
+    border-radius: 0.6rem;
+    z-index: -1;
+  }
+  
+  .blur-backdrop {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
   }
 }

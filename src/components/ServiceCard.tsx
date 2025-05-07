@@ -37,13 +37,13 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, icon, description, lin
   };
 
   return (
-    <div className="service-card bg-white p-6 rounded-lg shadow-md border border-gray-200 h-full flex flex-col">
+    <div className="service-card p-6 rounded-lg shadow-lg h-full flex flex-col">
       <div className="flex flex-col items-center text-center">
-        <div className="bg-gray-100 p-4 rounded-full mb-4">
+        <div className="bg-ams-black bg-opacity-50 p-4 rounded-full mb-4 border border-ams-gold/40">
           {renderIcon()}
         </div>
-        <h3 className="text-xl font-bold mb-2">{title}</h3>
-        {description && <p className="text-gray-600 mb-4">{description}</p>}
+        <h3 className="text-xl font-bold mb-2 text-white">{title}</h3>
+        {description && <p className="text-gray-300 mb-4">{description}</p>}
         <Link 
           to={link} 
           className="mt-auto inline-flex items-center text-ams-black bg-ams-gold hover:bg-opacity-90 font-medium px-4 py-2 rounded-md transition-colors"

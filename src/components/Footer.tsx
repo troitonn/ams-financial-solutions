@@ -6,7 +6,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-ams-black text-white pt-12 pb-6">
+    <footer className="bg-ams-black text-white pt-12 pb-6 border-t border-ams-gold/20">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
@@ -79,7 +79,7 @@ const Footer = () => {
           
           <div>
             <h3 className="text-xl font-bold mb-4 text-ams-gold">Contato</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-4">
               <li className="flex items-start space-x-2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-ams-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -103,7 +103,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <hr className="border-gray-800 my-6" />
+        <hr className="border-ams-gold/20 my-6" />
         
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-400">
