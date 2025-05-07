@@ -35,7 +35,7 @@ const ResultsSection = () => {
         
         <div className="flex justify-center">
           <div className="glass-card p-10 text-center transform hover:scale-105 transition-all duration-500 border border-ams-gold/40 shadow-[0_0_30px_rgba(252,204,76,0.15)] animate-float-soft">
-            <div className="gradient-gold text-6xl md:text-7xl lg:text-8xl font-bold mb-2 glow-text- rounded-sm">+R$50MM</div>
+            <div className="gradient-gold text-4xl md:text-5xl lg:text-6xl font-bold mb-2 glow-text- rounded-sm">+R$50MM</div>
             <div className="text-3xl md:text-4xl text-ams-gold font-bold"></div>
           </div>
         </div>
