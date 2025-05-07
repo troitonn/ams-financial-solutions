@@ -26,8 +26,8 @@ const ServiceSection = ({
             {icon}
           </div>
         </div>
-        <div>
-          <h2 className="text-2xl md:text-3xl mb-2 font-bold text-yellow-400">{title}</h2>
+        <div className="py-[11px]">
+          <h2 className="text-2xl md:text-3xl mb-2 font-bold text-yellow-400 py-px">{title}</h2>
           <p className="text-gray-600 mb-6">{description}</p>
           
           {isActive && <div className="animate-fade-in">
@@ -55,7 +55,7 @@ const ServiceSection = ({
                   e alianças estratégicas com bancos e fundos de investimentos, oferecemos as melhores 
                   condições de mercado, sempre buscando reduzir o custo do capital e otimizar o fluxo de caixa.
                 </p>
-                <p>
+                <p className="py-0">
                   Na A.M.S Negócios e Intermediação, nosso objetivo é proporcionar tranquilidade financeira 
                   para que nossos clientes possam focar no crescimento e na expansão de seus negócios. 
                   Seja para enfrentar desafios sazonais ou para alavancar novas oportunidades, estamos 
