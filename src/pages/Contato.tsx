@@ -1,13 +1,66 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import ContactForm from '../components/ContactForm';
+import { CircleCheck, Send, WhatsApp } from 'lucide-react';
+import { toast } from 'sonner';
 
 const Contato = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+    service: 'capital-de-giro'
+  });
+  
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    
+    // Simulate form submission
+    setTimeout(() => {
+      toast.success('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+        service: 'capital-de-giro'
+      });
+      setLoading(false);
+    }, 1500);
+  };
+
+  const handleWhatsAppClick = () => {
+    // Create WhatsApp message with form data
+    const message = `Olá! Meu nome é ${formData.name}.\n\nEmail: ${formData.email}\nTelefone: ${formData.phone}\nInteresse: ${getServiceName(formData.service)}\n\nMensagem: ${formData.message}`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/5511999285273?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const getServiceName = (serviceKey) => {
+    const services = {
+      'capital-de-giro': 'Capital de Giro',
+      'agronegocio': 'Agronegócio',
+      'real-estate': 'Real Estate',
+      'trade-finance': 'Trade Finance',
+      'antecipacao': 'Antecipação de Créditos'
+    };
+    return services[serviceKey] || serviceKey;
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -17,7 +70,7 @@ const Contato = () => {
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-24">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-ams-black via-ams-darkGray to-ams-black opacity-80"></div>
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1496307653780-42ee777d4833?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center"></div>
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -31,13 +84,13 @@ const Contato = () => {
       </section>
       
       {/* Contact Content */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-ams-black">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Fale Conosco</h2>
-              <p className="text-gray-700 mb-8">
-                Preencha o formulário ao lado e um dos nossos consultores entrará em contato 
+            <div className="glass-card p-8 rounded-lg border border-ams-gold/30 hover:border-ams-gold/70 transition-all duration-300">
+              <h2 className="text-3xl font-bold mb-6 gradient-gold">Fale Conosco</h2>
+              <p className="text-gray-300 mb-8">
+                Preencha o formulário e um dos nossos consultores entrará em contato 
                 com você em breve. Ou, se preferir, utilize um dos nossos canais de atendimento direto.
               </p>
               
@@ -49,9 +102,8 @@ const Contato = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-1">Telefone</h3>
-                    <p className="text-gray-700">(11) 9999-9999</p>
-                    <p className="text-gray-700">(11) 8888-8888</p>
+                    <h3 className="text-xl font-semibold mb-1 text-white">Telefone</h3>
+                    <p className="text-gray-300">+55 (11) 99928-5273</p>
                   </div>
                 </div>
                 
@@ -62,9 +114,8 @@ const Contato = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-1">Email</h3>
-                    <p className="text-gray-700">contato@amsnegcios.com.br</p>
-                    <p className="text-gray-700">atendimento@amsnegcios.com.br</p>
+                    <h3 className="text-xl font-semibold mb-1 text-white">Email</h3>
+                    <p className="text-gray-300">contato@amsnegcios.com.br</p>
                   </div>
                 </div>
                 
@@ -76,10 +127,10 @@ const Contato = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-1">Endereço</h3>
-                    <p className="text-gray-700">Av. Paulista, 1000</p>
-                    <p className="text-gray-700">Bela Vista, São Paulo - SP</p>
-                    <p className="text-gray-700">CEP: 01310-100</p>
+                    <h3 className="text-xl font-semibold mb-1 text-white">Endereço</h3>
+                    <p className="text-gray-300">Av. Paulista, 1000</p>
+                    <p className="text-gray-300">Bela Vista, São Paulo - SP</p>
+                    <p className="text-gray-300">CEP: 01310-100</p>
                   </div>
                 </div>
                 
@@ -90,31 +141,153 @@ const Contato = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-1">Horário de Atendimento</h3>
-                    <p className="text-gray-700">Segunda a Sexta: 9h às 18h</p>
-                    <p className="text-gray-700">Sábado: 9h às 13h</p>
+                    <h3 className="text-xl font-semibold mb-1 text-white">Horário de Atendimento</h3>
+                    <p className="text-gray-300">Segunda a Sexta: 9h às 18h</p>
                   </div>
                 </div>
+
+                <button 
+                  onClick={handleWhatsAppClick} 
+                  className="flex items-center justify-center w-full gap-2 bg-[#25D366] hover:bg-[#1da750] text-white py-3 px-4 rounded-lg transition-colors duration-300 mt-6"
+                >
+                  <WhatsApp size={20} />
+                  <span>Fale pelo WhatsApp</span>
+                </button>
               </div>
             </div>
             
-            <div className="bg-gray-50 p-8 rounded-lg shadow-lg">
-              <h2 className="text-2xl font-bold mb-6">Envie sua Mensagem</h2>
-              <ContactForm />
+            <div className="glass-card p-8 rounded-lg border border-ams-gold/30 hover:border-ams-gold/70 transition-all duration-300">
+              <h2 className="text-2xl font-bold mb-6 gradient-gold">Envie sua Mensagem</h2>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium mb-1 text-white">
+                    Nome
+                  </label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Digite seu nome"
+                    className="w-full px-4 py-3 bg-ams-darkGray bg-opacity-50 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-ams-gold focus:border-transparent text-white"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-1 text-white">
+                    Email
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Digite o seu email"
+                    className="w-full px-4 py-3 bg-ams-darkGray bg-opacity-50 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-ams-gold focus:border-transparent text-white"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium mb-1 text-white">
+                    Telefone
+                  </label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="Digite seu telefone"
+                    className="w-full px-4 py-3 bg-ams-darkGray bg-opacity-50 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-ams-gold focus:border-transparent text-white"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="service" className="block text-sm font-medium mb-1 text-white">
+                    Serviço de Interesse
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    required
+                    value={formData.service}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-ams-darkGray bg-opacity-50 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-ams-gold focus:border-transparent text-white"
+                  >
+                    <option value="capital-de-giro">Capital de Giro</option>
+                    <option value="agronegocio">Agronegócio</option>
+                    <option value="real-estate">Real Estate</option>
+                    <option value="trade-finance">Trade Finance</option>
+                    <option value="antecipacao">Antecipação de Créditos</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium mb-1 text-white">
+                    Mensagem
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    required
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Escreva sua mensagem"
+                    className="w-full px-4 py-3 bg-ams-darkGray bg-opacity-50 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-ams-gold focus:border-transparent text-white"
+                  />
+                </div>
+                
+                <div className="flex gap-4">
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="flex-1 gold-button py-3 rounded-md font-medium flex items-center justify-center"
+                  >
+                    {loading ? (
+                      <span className="flex items-center">
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-ams-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Enviando...
+                      </span>
+                    ) : (
+                      <span className="flex items-center">
+                        <Send className="mr-2 h-5 w-5" />
+                        Enviar Mensagem
+                      </span>
+                    )}
+                  </button>
+                  
+                  <button
+                    type="button"
+                    onClick={handleWhatsAppClick}
+                    className="px-4 py-2 bg-[#25D366] hover:bg-[#1da750] text-white rounded-md flex items-center justify-center"
+                  >
+                    <WhatsApp size={20} />
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </section>
       
       {/* Map Section */}
-      <section className="py-12 bg-gray-100">
+      <section className="py-12 bg-ams-darkGray">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6 text-center">Nossa Localização</h2>
-            <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
+            <h2 className="text-2xl font-bold mb-6 text-center gradient-gold">Nossa Localização</h2>
+            <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg glass-card">
               {/* This is a placeholder for a map - in a real implementation, you'd use Google Maps or another map service */}
-              <div className="bg-gray-300 w-full h-64 flex items-center justify-center">
-                <p className="text-gray-600 text-lg">Mapa indisponível</p>
+              <div className="bg-ams-black w-full h-64 flex items-center justify-center border border-ams-gold/10">
+                <p className="text-gray-400 text-lg">Mapa indisponível</p>
               </div>
             </div>
           </div>
