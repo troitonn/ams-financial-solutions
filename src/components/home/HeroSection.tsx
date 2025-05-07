@@ -7,9 +7,9 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-ams-black via-ams-darkGray/70 to-ams-black opacity-90"></div>
         {/* Abstract financial background instead of a photo */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(252,204,76,0.1)_0%,_rgba(0,0,0,0)_50%)] animate-pulse"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(252,204,76,0.1)_0%,_rgba(0,0,0,0)_50%)] animate-pulse" style={{
+        <div style={{
         animationDelay: '1s'
-      }}></div>
+      }} className="absolute inset-0 bg-[radial-gradient(120%_100%_at_top_right,_rgba(252,204,76,0.1)_0%,_rgba(0,0,0,0)_100%)] animate-pulse"></div>
         
         {/* Animated particles */}
         <div className="absolute top-1/4 left-1/4 h-2 w-2 rounded-full bg-ams-gold/60 animate-float" style={{
