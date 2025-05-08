@@ -1,31 +1,19 @@
+
 import React, { useEffect } from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import { Link } from 'react-router-dom';
+import CareerTimeline from '../components/founder/CareerTimeline';
+
 const Fundador = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  return <div className="min-h-screen flex flex-col">
+
+  return (
+    <div className="min-h-screen flex flex-col">
       <NavBar />
       
-      {/* Hero Section - Removed top image as requested */}
-      <section className="relative pt-24 pb-16 md:pt-32 md:pb-24">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-ams-black via-ams-darkGray to-ams-black opacity-80"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center text-white">
-            
-            <p className="text-lg md:text-xl text-gray-200">
-              Fundador da A.M.S Negócios e Intermediação
-            </p>
-          </div>
-        </div>
-      </section>
-      
-      {/* Founder Profile - Updated with LinkedIn information */}
+      {/* Profile Section */}
       <section className="py-16 md:py-24 bg-gradient-to-b from-ams-black to-ams-darkGray">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-12 gap-12 items-start max-w-5xl mx-auto">
@@ -69,45 +57,8 @@ const Fundador = () => {
                 </ul>
               </div>
               
+              {/* Education Section */}
               <div className="glass-card p-8 mb-8">
-                <h3 className="text-2xl font-bold mb-6 text-white border-b border-ams-gold/30 pb-3">Experiência Profissional</h3>
-                
-                <div className="mb-8">
-                  <div className="flex items-center justify-between mb-2">
-                    <h4 className="text-lg font-bold text-white">Sócio proprietário</h4>
-                    <span className="text-ams-gold">Jan 2023 - Presente · 2 yrs 5 mos</span>
-                  </div>
-                  <p className="text-gray-300 mb-1">A.M.S Negocios e Intermediacao Ltda · Full-time</p>
-                  <p className="text-gray-300 italic mb-4">São Paulo, Brasil · On-site</p>
-                  <p className="text-gray-300 mb-2">
-                    Trajetória profissional, desenvolvida em instituições financeiras nacionais com experiência nas áreas Corporate, Middle Market.
-                  </p>
-                  <ul className="space-y-2 text-gray-300 list-disc pl-6">
-                    <li>Vivência análise e intermediação de negócios, operações de crédito e risco, e gerenciamento de transações financeiras convencionais e estruturadas.</li>
-                    <li>Habilidade na condução de negociações e no desenvolvimento de relacionamento com empresas, Bancos fundos de Investimentos, Assets</li>
-                    <li>Focado em resultados e nas necessidades do cliente, com visão de relacionamento de longo prazo.</li>
-                    <li>Domínio de produtos bancários relacionados aos mercados de capitais, doméstico.</li>
-                    <li>Experiência na originação, estruturação e distribuição de serviços/produtos bancários/financeiros incluindo capital de giro, securitização de recebíveis, entre outros.</li>
-                    <li>Geramos 50MM em operações estruturadas em 2024, cases de Sucesso, empresa ramo Agro e Alimentícios</li>
-                  </ul>
-                </div>
-                
-                <div className="mb-8">
-                  <div className="flex items-center justify-between mb-2">
-                    <h4 className="text-lg font-bold text-white">Gerente Comercial Middle e Corporate</h4>
-                    <span className="text-ams-gold">Aug 2019 - Jan 2023 · 3 yrs 6 mos</span>
-                  </div>
-                  <p className="text-gray-300 mb-1">Prudent Group · Full-time</p>
-                  <p className="text-gray-300 italic mb-4">São Paulo, Brasil</p>
-                  <p className="text-gray-300">
-                    Prospecção de Clientes empresas, seguimentos: Middle, Corporate, Large Corp.
-                    Operações de Crédito estruturados, rentabilização e gerenciamento de Carteira.
-                    Aprovação ramo agro 200MM com grandes Players!
-                  </p>
-                </div>
-              </div>
-              
-              <div className="glass-card p-8">
                 <h3 className="text-2xl font-bold mb-6 text-white border-b border-ams-gold/30 pb-3">Educação</h3>
                 
                 <div className="mb-6">
@@ -127,8 +78,17 @@ const Fundador = () => {
         </div>
       </section>
       
-      {/* Recommendations Section with the updated testimonials */}
+      {/* Career Timeline Section */}
       <section className="py-16 md:py-24 bg-gradient-to-b from-ams-darkGray to-ams-black">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <CareerTimeline />
+          </div>
+        </div>
+      </section>
+      
+      {/* Recommendations Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-ams-black to-ams-darkGray">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-10 text-center gradient-gold glow-text">Recomendações</h2>
@@ -157,7 +117,7 @@ const Fundador = () => {
                 </p>
                 <div className="flex items-center">
                   <div>
-                    <p className="font-semibold text-white">Edilene Pontes Pontes</p>
+                    <p className="font-semibold text-white">Edilene Pontes</p>
                     <p className="text-ams-gold text-sm">Gerente Comercial. Fidcs.</p>
                     <p className="text-gray-400 text-xs">June 16, 2020, Edilene Pontes worked with Antonio but on different teams</p>
                   </div>
@@ -182,6 +142,8 @@ const Fundador = () => {
       </section>
       
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Fundador;

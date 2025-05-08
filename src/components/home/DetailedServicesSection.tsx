@@ -188,7 +188,7 @@ const DetailedServicesSection = () => {
     {
       title: "Antecipação de Créditos – Liquidez Imediata",
       description: "Transformação de vendas a prazo e recebíveis futuros em capital imediato para sua empresa.",
-      imageUrl: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1559526324-593bc073d938?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80",
       linkTo: "/servicos#antecipacao",
       benefits: [
         "Reforço imediato do fluxo de caixa sem comprometer operações",
@@ -199,7 +199,7 @@ const DetailedServicesSection = () => {
     {
       title: "Agrofinanças – Soluções para o Agronegócio",
       description: "Consultoria voltada ao setor agro, com foco em crédito rural, gestão financeira e expansão.",
-      imageUrl: "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80",
+      imageUrl: "/lovable-uploads/0e55865e-da26-4cf2-a36b-e72345b184d1.png",
       linkTo: "/servicos#agronegocio",
       benefits: [
         "Apoio na renegociação de dívidas e busca por linhas de crédito",
@@ -211,7 +211,7 @@ const DetailedServicesSection = () => {
 
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-ams-black to-ams-darkGray relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ams-gold/50 to-transparent w-1/2 mx-auto"></div>
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ams-gold/50 to-transparent w-1/3 mx-auto"></div>
       
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">

@@ -18,7 +18,7 @@ const Integridade = () => {
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-24">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-ams-black via-ams-darkGray to-ams-black opacity-80"></div>
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1622227922682-56c92e523e58?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center"></div>
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -108,12 +108,14 @@ const Integridade = () => {
               </div>
               
               <div className="mt-10 text-center">
-                <Link 
-                  to="/contato" 
+                <a 
+                  href="https://wa.me/5511999285273?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20A.M.S" 
+                  target="_blank" 
+                  rel="noreferrer"
                   className="gold-button px-8 py-3 rounded-md font-medium text-lg inline-flex"
                 >
                   Fale Conosco
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -133,26 +135,30 @@ const Integridade = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="glass-card p-6 border border-ams-gold/20 hover:border-ams-gold/50 transition-all">
               <p className="text-gray-300 mb-6 italic">
-                "Ao longo de nossa parceria com a A.M.S, sempre encontramos um compromisso inabalável com a ética e 
-                a transparência. Isso nos dá a confiança necessária para realizar operações financeiras complexas."
+                "Antonio Marcos é um profissional gabaritado, de grande valia numa equipe, colaborador nato.
+                Experiente na área comercial em fundos e bancos e de uma gentileza ímpar.
+                Recomendo com credibilidade e eficiência de executivo exemplar."
               </p>
               <div className="flex items-center">
-                <div className="ml-3">
-                  <p className="text-white font-medium">Roberto Menezes</p>
-                  <p className="text-ams-gold text-sm">Diretor Financeiro, TechSolutions</p>
+                <div>
+                  <p className="font-semibold text-white">Douglas Kuroviski</p>
+                  <p className="text-ams-gold text-sm">Head Grandes Contas | Especialista | Hunter | Sales Trader l Tecnologia</p>
+                  <p className="text-gray-400 text-xs">June 16, 2020, Douglas worked with Antonio on the same team</p>
                 </div>
               </div>
             </div>
             
             <div className="glass-card p-6 border border-ams-gold/20 hover:border-ams-gold/50 transition-all">
               <p className="text-gray-300 mb-6 italic">
-                "O que mais valorizo na A.M.S é a clareza com que conduzem seus negócios. Cada etapa do processo é 
-                explicada detalhadamente, e nunca há surpresas desagradáveis."
+                "Recomendo este excelente profissional para área comercial.
+                Dinâmico, arrojado, vontade de vencer.
+                Parabéns você é merecedor de grandes conquistas."
               </p>
               <div className="flex items-center">
-                <div className="ml-3">
-                  <p className="text-white font-medium">Carolina Almeida</p>
-                  <p className="text-ams-gold text-sm">CEO, Grupo Almeida</p>
+                <div>
+                  <p className="font-semibold text-white">Edilene Pontes</p>
+                  <p className="text-ams-gold text-sm">Gerente Comercial. Fidcs.</p>
+                  <p className="text-gray-400 text-xs">June 16, 2020, Edilene Pontes worked with Antonio but on different teams</p>
                 </div>
               </div>
             </div>
@@ -163,9 +169,10 @@ const Integridade = () => {
                 A A.M.S sempre nos orientou pelo caminho correto, mesmo quando não era o mais fácil."
               </p>
               <div className="flex items-center">
-                <div className="ml-3">
-                  <p className="text-white font-medium">Marcelo Santos</p>
-                  <p className="text-ams-gold text-sm">Proprietário, Santos Agronegócios</p>
+                <div>
+                  <p className="font-semibold text-white">Thiago Garcia</p>
+                  <p className="text-ams-gold text-sm">Especialista em Estratégias e Soluções Financeiras, FP&A, Controller.</p>
+                  <p className="text-gray-400 text-xs">June 12, 2020, Thiago was Antonio's client</p>
                 </div>
               </div>
             </div>
