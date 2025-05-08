@@ -72,12 +72,12 @@ const DetailedServicesSection = () => {
     }
   };
   
-  // Auto scroll functionality - much slower now (120 seconds complete cycle)
+  // Auto scroll functionality - much slower now (45 seconds complete cycle)
   useEffect(() => {
     const container = scrollContainerRef.current;
     let animationFrameId: number;
     let lastTime = 0;
-    const speed = 0.04; // Reduced speed for much slower scrolling (pixels per millisecond)
+    const speed = 0.1; // Reduced speed for slower scrolling (pixels per millisecond)
     
     const autoScroll = (timestamp: number) => {
       if (container && autoScrolling) {
@@ -199,7 +199,7 @@ const DetailedServicesSection = () => {
     {
       title: "Agrofinanças – Soluções para o Agronegócio",
       description: "Consultoria voltada ao setor agro, com foco em crédito rural, gestão financeira e expansão.",
-      imageUrl: "/images/8f890ee1-65bc-4a4f-99c7-bded21996f23.png",
+      imageUrl: "/lovable-uploads/0e55865e-da26-4cf2-a36b-e72345b184d1.png",
       linkTo: "/servicos#agronegocio",
       benefits: [
         "Apoio na renegociação de dívidas e busca por linhas de crédito",
