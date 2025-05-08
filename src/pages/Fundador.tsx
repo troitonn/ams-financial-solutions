@@ -16,7 +16,7 @@ const Fundador = () => {
             <div className="md:col-span-4">
               <div className="sticky top-24">
                 <div className="rounded-full overflow-hidden shadow-xl border-4 border-ams-gold/30 w-48 h-48 mx-auto mb-6">
-                  <img src="/lovable-uploads/215aaddb-d2ee-43bb-b180-161dcf0b7d73.png" alt="Antonio Marcos" className="object-cover w-full h-full" />
+                  <img alt="Antonio Marcos" className="object-cover w-full h-full" src="/lovable-uploads/1363192b-2759-48a9-8e5b-94f30b4dd145.jpg" />
                 </div>
                 <div className="text-center mb-8">
                   <h2 className="text-2xl font-bold mb-2 text-white gradient-gold">Antonio Marcos</h2>
