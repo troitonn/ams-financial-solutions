@@ -1,16 +1,12 @@
-
 import React, { useEffect } from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import CareerTimeline from '../components/founder/CareerTimeline';
-
 const Fundador = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <NavBar />
       
       {/* Profile Section */}
@@ -88,7 +84,7 @@ const Fundador = () => {
       </section>
       
       {/* Recommendations Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-ams-black to-ams-darkGray">
+      <section className="py-16 bg-gradient-to-b from-ams-black to-ams-darkGray md:py-0">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-10 text-center gradient-gold glow-text">Recomendações</h2>
@@ -142,8 +138,6 @@ const Fundador = () => {
       </section>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Fundador;
