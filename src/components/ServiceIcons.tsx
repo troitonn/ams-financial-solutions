@@ -1,13 +1,13 @@
 
 import React from 'react';
-import { Dollar, Sprout, Home, BarChart3, FileSpreadsheet } from 'lucide-react';
+import { ChartBar, Sprout, Home, BarChart3, FileSpreadsheet } from 'lucide-react';
 
 interface IconProps {
   className?: string;
 }
 
 export const Capital: React.FC<IconProps> = ({ className = "" }) => (
-  <Dollar className={className} />
+  <ChartBar className={className} />
 );
 
 export const ChemicalIcon: React.FC<IconProps> = ({ className = "" }) => (
