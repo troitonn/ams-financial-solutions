@@ -1,7 +1,6 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Sprout } from 'lucide-react';
 
 const AgroSection = () => {
   return (
@@ -48,8 +47,8 @@ const AgroSection = () => {
           <div className="order-1 md:order-2 mb-8 md:mb-0 transform -rotate-6">
             <div className="droplet-shape overflow-hidden relative">
               <img 
-                src="/lovable-uploads/0e55865e-da26-4cf2-a36b-e72345b184d1.png" 
-                alt="Agronegócio - Trator trabalhando na plantação" 
+                src="/lovable-uploads/4d595c70-259f-4a30-877b-7e41dec751a1.png" 
+                alt="Agronegócio - Agricultor examinando plantas no campo" 
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ams-black to-transparent opacity-50"></div>
