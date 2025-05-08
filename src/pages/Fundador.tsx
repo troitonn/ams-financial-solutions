@@ -1,16 +1,12 @@
-
 import React, { useEffect } from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
-
 const Fundador = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <NavBar />
       
       {/* Hero Section - Removed top image as requested */}
@@ -21,7 +17,7 @@ const Fundador = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center text-white">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 gradient-gold glow-text">Antonio Marcos</h1>
+            
             <p className="text-lg md:text-xl text-gray-200">
               Fundador da A.M.S Negócios e Intermediação
             </p>
@@ -36,11 +32,7 @@ const Fundador = () => {
             <div className="md:col-span-4">
               <div className="sticky top-24">
                 <div className="rounded-full overflow-hidden shadow-xl border-4 border-ams-gold/30 w-48 h-48 mx-auto mb-6">
-                  <img 
-                    src="/lovable-uploads/215aaddb-d2ee-43bb-b180-161dcf0b7d73.png" 
-                    alt="Antonio Marcos" 
-                    className="object-cover w-full h-full"
-                  />
+                  <img src="/lovable-uploads/215aaddb-d2ee-43bb-b180-161dcf0b7d73.png" alt="Antonio Marcos" className="object-cover w-full h-full" />
                 </div>
                 <div className="text-center mb-8">
                   <h2 className="text-2xl font-bold mb-2 text-white gradient-gold">Antonio Marcos</h2>
@@ -190,8 +182,6 @@ const Fundador = () => {
       </section>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Fundador;
