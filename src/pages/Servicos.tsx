@@ -31,13 +31,13 @@ const Servicos = () => {
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-24">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-ams-black via-ams-darkGray to-ams-black opacity-80"></div>
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center bg-zinc-950"></div>
+          
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center text-white">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 gradient-gold glow-text">Nossos Serviços</h1>
-            <p className="text-lg md:text-xl text-zinc-950 font-extrabold">
+            <p className="text-lg md:text-xl font-extrabold text-zinc-50">
               Soluções financeiras personalizadas para o sucesso do seu negócio
             </p>
           </div>
@@ -45,7 +45,7 @@ const Servicos = () => {
       </section>
       
       {/* Services Content */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section className="py-16 bg-gray-50 md:py-[50px]">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <p className="text-xl text-gray-700 mb-12 text-center">
