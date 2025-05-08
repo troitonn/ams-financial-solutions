@@ -10,7 +10,7 @@ const Fundador = () => {
       <NavBar />
       
       {/* Profile Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-ams-black to-ams-darkGray">
+      <section className="py-16 bg-gradient-to-b from-ams-black to-ams-darkGray md:py-[97px]">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-12 gap-12 items-start max-w-5xl mx-auto">
             <div className="md:col-span-4">
@@ -75,7 +75,7 @@ const Fundador = () => {
       </section>
       
       {/* Career Timeline Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-ams-darkGray to-ams-black">
+      <section className="py-16 bg-gradient-to-b from-ams-darkGray to-ams-black md:py-0">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <CareerTimeline />
@@ -85,7 +85,7 @@ const Fundador = () => {
       
       {/* Recommendations Section */}
       <section className="py-16 bg-gradient-to-b from-ams-black to-ams-darkGray md:py-0">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 py-[30px]">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-10 text-center gradient-gold glow-text">Recomendações</h2>
             
