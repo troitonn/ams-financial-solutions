@@ -51,7 +51,7 @@ const NavBar = () => {
               </div>
             </div>
             
-            <Link to="/servicos" className="text-white hover:text-ams-gold font-medium transition duration-200">NEGOCIOS E PRODUTOS</Link>
+            <Link to="/servicos" className="text-white hover:text-ams-gold font-medium transition duration-200">NEGÓCIOS E PRODUTOS</Link>
             
             <a href="https://wa.me/5511999285273" target="_blank" rel="noreferrer" className="gold-button px-6 py-2 rounded-md font-medium">
               Fale com um consultor
