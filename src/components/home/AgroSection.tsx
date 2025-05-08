@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ArrowRight, Sprout } from 'lucide-react';
 const AgroSection = () => {
@@ -31,7 +32,7 @@ const AgroSection = () => {
           
           <div className="order-1 md:order-2 mb-8 md:mb-0 transform -rotate-6">
             <div className="droplet-shape overflow-hidden relative">
-              <img src="/lovable-uploads/4d595c70-259f-4a30-877b-7e41dec751a1.png" alt="Agronegócio - Agricultor examinando plantas no campo" className="w-full h-full object-cover" />
+              <img src="/images/8f890ee1-65bc-4a4f-99c7-bded21996f23.png" alt="Agronegócio - Trator irrigando plantação em campo ao pôr do sol" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-ams-black to-transparent opacity-0"></div>
             </div>
           </div>
