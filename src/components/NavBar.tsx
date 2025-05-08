@@ -45,14 +45,13 @@ const NavBar = () => {
                 <div className="py-1 glass-card">
                   <Link to="/sobre" className="block px-4 py-2 text-white hover:bg-ams-gold/10 hover:text-ams-gold">SOBRE NÓS</Link>
                   <Link to="/fundador" className="block px-4 py-2 text-white hover:bg-ams-gold/10 hover:text-ams-gold">FOUNDER</Link>
-                  <Link to="/integridade" className="block px-4 py-2 text-white hover:bg-ams-gold/10 hover:text-ams-gold">VALORES</Link>
+                  <Link to="/integridade" className="block px-4 py-2 text-white hover:bg-ams-gold/10 hover:text-ams-gold">INTEGRIDADE
+                </Link>
                 </div>
               </div>
             </div>
             
-            <Link to="/servicos" className="text-white hover:text-ams-gold font-medium transition duration-200">
-              Nossos Serviços
-            </Link>
+            <Link to="/servicos" className="text-white hover:text-ams-gold font-medium transition duration-200">NEGOCIOS E PRODUTOS</Link>
             
             <a href="https://wa.me/5511999285273" target="_blank" rel="noreferrer" className="gold-button px-6 py-2 rounded-md font-medium">
               Fale com um consultor
