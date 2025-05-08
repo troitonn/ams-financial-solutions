@@ -76,7 +76,7 @@ const NavBar = () => {
               </Link>
               <div className="py-2">
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-white font-medium">Nossa essência</span>
+                  <span className="text-white font-medium">NOSSA ESSÊNCIA</span>
                 </div>
                 <div className="ml-4 space-y-2 border-l border-ams-gold/30 pl-4">
                   <Link to="/sobre" className="block text-white hover:text-ams-gold transition duration-200" onClick={() => setIsMobileMenuOpen(false)}>
