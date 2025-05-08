@@ -21,7 +21,7 @@ const NavBar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center">
-            <img alt="A.M.S Logo" className="h-12 md:h-14" src="/lovable-uploads/27e43f12-b3fd-47e6-ba7c-c1dac30a643c.png" />
+            <img src="/lovable-uploads/b247c5c7-36c8-4b05-a27a-07ea51c089bf.png" alt="A.M.S Logo" className="h-12 md:h-14" />
           </Link>
           
           {/* Skip to content for accessibility */}
