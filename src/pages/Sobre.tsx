@@ -1,16 +1,12 @@
-
 import React, { useEffect } from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
-
 const Sobre = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <NavBar />
       
       {/* Hero Section */}
@@ -22,10 +18,8 @@ const Sobre = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white gradient-gold glow-text">Sobre a A.M.S</h1>
-            <p className="text-lg md:text-xl text-gray-200">
-              Conheça nossa história, missão, visão e valores.
-            </p>
+            
+            
           </div>
         </div>
       </section>
@@ -146,12 +140,7 @@ const Sobre = () => {
             </div>
             
             <div className="text-center">
-              <a 
-                href="https://wa.me/5511999285273"
-                target="_blank"
-                rel="noreferrer"
-                className="gold-button px-8 py-3 rounded-md font-medium text-lg inline-flex items-center"
-              >
+              <a href="https://wa.me/5511999285273" target="_blank" rel="noreferrer" className="gold-button px-8 py-3 rounded-md font-medium text-lg inline-flex items-center">
                 Entre em contato conosco
               </a>
             </div>
@@ -160,8 +149,6 @@ const Sobre = () => {
       </section>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Sobre;
