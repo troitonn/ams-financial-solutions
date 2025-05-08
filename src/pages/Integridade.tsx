@@ -1,32 +1,23 @@
-
 import React, { useEffect } from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import { Shield, ShieldCheck, CircleCheck } from 'lucide-react';
-
 const Integridade = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <NavBar />
       
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 md:pt-32 md:pb-24">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-ams-black via-ams-darkGray to-ams-black opacity-80"></div>
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center"></div>
-        </div>
+      <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 py-[50px]">
+        
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center text-white">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Integridade</h1>
-            <p className="text-lg md:text-xl text-gray-200">
-              Nosso compromisso com os mais altos padrões éticos e de transparência
-            </p>
+            
+            
           </div>
         </div>
       </section>
@@ -108,12 +99,7 @@ const Integridade = () => {
               </div>
               
               <div className="mt-10 text-center">
-                <a 
-                  href="https://wa.me/5511999285273?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20A.M.S" 
-                  target="_blank" 
-                  rel="noreferrer"
-                  className="gold-button px-8 py-3 rounded-md font-medium text-lg inline-flex"
-                >
+                <a href="https://wa.me/5511999285273?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20A.M.S" target="_blank" rel="noreferrer" className="gold-button px-8 py-3 rounded-md font-medium text-lg inline-flex">
                   Fale Conosco
                 </a>
               </div>
@@ -181,8 +167,6 @@ const Integridade = () => {
       </section>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Integridade;
