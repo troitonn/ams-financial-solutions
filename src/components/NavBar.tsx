@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,14 +54,20 @@ const NavBar = () => {
             <Link to="/" className="text-white hover:text-ams-gold font-medium transition duration-200">
               Home
             </Link>
-            <div className="group relative">
+            
+            {/* Nossa essência dropdown - stays open while hovering on child elements */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setDropdownOpen(true)}
+              onMouseLeave={() => setDropdownOpen(false)}
+            >
               <button className="text-white hover:text-ams-gold font-medium transition duration-200 flex items-center">
                 Nossa essência
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-ams-black border border-ams-gold/20 hidden group-hover:block">
+              <div className={`absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-ams-black border border-ams-gold/20 transition-opacity duration-150 ${dropdownOpen ? 'opacity-100' : 'opacity-0 invisible'}`}>
                 <div className="py-1 glass-card">
                   <Link to="/sobre" className="block px-4 py-2 text-white hover:bg-ams-gold/10 hover:text-ams-gold">
                     Sobre a A.M.S
@@ -74,12 +81,19 @@ const NavBar = () => {
                 </div>
               </div>
             </div>
+            
             <Link to="/servicos" className="text-white hover:text-ams-gold font-medium transition duration-200">
               Nossos Serviços
             </Link>
-            <Link to="/contato" className="gold-button px-6 py-2 rounded-md font-medium">
+            
+            <a 
+              href="https://wa.me/5511999285273" 
+              target="_blank" 
+              rel="noreferrer"
+              className="gold-button px-6 py-2 rounded-md font-medium"
+            >
               Fale com um consultor
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -145,13 +159,15 @@ const NavBar = () => {
               >
                 Nossos Serviços
               </Link>
-              <Link 
-                to="/contato" 
+              <a 
+                href="https://wa.me/5511999285273" 
+                target="_blank"
+                rel="noreferrer"
                 className="gold-button px-6 py-3 rounded-md font-medium text-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Fale com um consultor
-              </Link>
+              </a>
             </div>
           </div>
         )}

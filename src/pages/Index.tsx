@@ -5,11 +5,11 @@ import Footer from '../components/Footer';
 import FloatingWhatsAppButton from '../components/home/FloatingWhatsAppButton';
 import HeroSection from '../components/home/HeroSection';
 import ServicesHighlightSection from '../components/home/ServicesHighlightSection';
-import ResultsSection from '../components/home/ResultsSection';
 import DetailedServicesSection from '../components/home/DetailedServicesSection';
 import PartnersSection from '../components/home/PartnersSection';
 import AboutSection from '../components/home/AboutSection';
 import ContactSection from '../components/home/ContactSection';
+import AgroSection from '../components/home/AgroSection';
 
 const Index = () => {
   useEffect(() => {
@@ -23,8 +23,8 @@ const Index = () => {
       
       <HeroSection />
       <ServicesHighlightSection />
-      <ResultsSection />
       <DetailedServicesSection />
+      <AgroSection />
       <PartnersSection />
       <AboutSection />
       <ContactSection />
