@@ -1,9 +1,11 @@
+
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import { Capital, ChemicalIcon, RealEstateAgency, ExchangeRate, JudicialIcon } from '../components/ServiceIcons';
+
 const ServiceSection = ({
   id,
   title,
@@ -19,7 +21,7 @@ const ServiceSection = ({
   isActive: boolean;
   onClick: () => void;
 }) => {
-  return <div id={id} onClick={onClick} className="">
+  return <div id={id} onClick={onClick} className="mb-12 p-6 rounded-lg hover:bg-ams-darkGray/10 transition-all cursor-pointer">
       <div className="flex flex-col md:flex-row md:items-center gap-6">
         <div className="flex-shrink-0">
           <div className={`p-4 rounded-full ${isActive ? 'bg-ams-gold text-ams-black' : 'bg-gray-200 text-gray-700'}`}>
@@ -29,12 +31,6 @@ const ServiceSection = ({
         <div className="py-[11px]">
           <h2 className="text-2xl md:text-3xl mb-2 font-bold text-yellow-400 py-px">{title}</h2>
           <p className="text-gray-600 mb-6">{description}</p>
-          
-          {isActive && <div className="animate-fade-in">
-              <Link to="/contato" className="gold-button px-6 py-2 rounded-md font-medium inline-flex items-center">
-                Fale Conosco
-              </Link>
-            </div>}
         </div>
       </div>
       
@@ -182,9 +178,11 @@ const ServiceSection = ({
         </div>}
     </div>;
 };
+
 const Servicos = () => {
   const location = useLocation();
   const [activeService, setActiveService] = useState('capital');
+  
   useEffect(() => {
     window.scrollTo(0, 0);
 
@@ -203,6 +201,7 @@ const Servicos = () => {
       }, 100);
     }
   }, [location]);
+  
   return <div className="min-h-screen flex flex-col">
       <NavBar />
       
@@ -215,7 +214,7 @@ const Servicos = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center text-white">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Nossos Serviços</h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 gradient-gold glow-text">Nossos Serviços</h1>
             <p className="text-lg md:text-xl text-gray-200">
               Soluções financeiras personalizadas para o sucesso do seu negócio
             </p>
@@ -246,20 +245,8 @@ const Servicos = () => {
         </div>
       </section>
       
-      {/* CTA Section */}
-      <section className="py-12 md:py-16 bg-ams-black text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Pronto para impulsionar o crescimento do seu negócio?</h2>
-          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-            Nossa equipe de especialistas está à disposição para ajudar sua empresa a alcançar novos patamares de sucesso financeiro.
-          </p>
-          <Link to="/contato" className="gold-button px-8 py-3 rounded-md font-medium text-lg inline-flex items-center">
-            Fale com um especialista
-          </Link>
-        </div>
-      </section>
-      
       <Footer />
     </div>;
 };
+
 export default Servicos;

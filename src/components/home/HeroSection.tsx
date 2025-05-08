@@ -6,21 +6,19 @@ import { ChevronDown, TrendingUp } from 'lucide-react';
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen w-screen flex items-center justify-center overflow-hidden" id="conteudo-principal">
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-ams-black via-ams-darkGray/70 to-ams-black opacity-90"></div>
+      <div className="absolute inset-0 z-0 scale-105">
+        <div className="absolute inset-0 bg-gradient-to-b from-ams-black via-ams-darkGray/90 to-ams-black opacity-95"></div>
         
-        {/* Reduced yellow effects - only two gradient elements */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(252,204,76,0.05)_0%,_rgba(0,0,0,0)_50%)] animate-pulse"></div>
-        <div style={{animationDelay: '1s'}} className="absolute inset-0 bg-[radial-gradient(120%_100%_at_top_right,_rgba(252,204,76,0.05)_0%,_rgba(0,0,0,0)_100%)] animate-pulse"></div>
+        {/* Reduced yellow effects - only two subtle gradient elements */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(252,204,76,0.03)_0%,_rgba(0,0,0,0)_40%)] animate-pulse"></div>
+        <div style={{animationDelay: '1.5s'}} className="absolute inset-0 bg-[radial-gradient(120%_100%_at_top_right,_rgba(252,204,76,0.03)_0%,_rgba(0,0,0,0)_80%)] animate-pulse"></div>
         
-        {/* Animated particles */}
-        <div className="absolute top-1/4 left-1/4 h-2 w-2 rounded-full bg-ams-gold/40 animate-float" style={{animationDelay: '0s'}}></div>
-        <div className="absolute top-3/4 left-1/3 h-3 w-3 rounded-full bg-ams-gold/30 animate-float" style={{animationDelay: '1.5s'}}></div>
-        <div className="absolute top-1/2 right-1/4 h-4 w-4 rounded-full bg-ams-gold/20 animate-float" style={{animationDelay: '2.8s'}}></div>
-        <div className="absolute bottom-1/4 right-1/3 h-2 w-2 rounded-full bg-ams-gold/30 animate-float" style={{animationDelay: '1s'}}></div>
+        {/* Minimal animated particles */}
+        <div className="absolute top-1/4 left-1/4 h-2 w-2 rounded-full bg-ams-gold/30 animate-float" style={{animationDelay: '0s'}}></div>
+        <div className="absolute bottom-1/4 right-1/3 h-2 w-2 rounded-full bg-ams-gold/20 animate-float" style={{animationDelay: '1s'}}></div>
         
         {/* Financial chart lines - more subtle */}
-        <div className="absolute bottom-0 left-0 right-0 h-64 opacity-10">
+        <div className="absolute bottom-0 left-0 right-0 h-64 opacity-5">
           <svg viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
             <path d="M0,150 Q300,50 600,180 T1200,120" stroke="#fccc4c" strokeWidth="2" fill="none" />
             <path d="M0,200 Q300,100 600,230 T1200,170" stroke="#fccc4c" strokeWidth="1.5" fill="none" />

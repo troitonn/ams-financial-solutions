@@ -21,8 +21,8 @@ const Sobre = () => {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center text-white">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Sobre a A.M.S</h1>
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white gradient-gold glow-text">Sobre a A.M.S</h1>
             <p className="text-lg md:text-xl text-gray-200">
               Conheça nossa história, missão, visão e valores.
             </p>
@@ -99,13 +99,61 @@ const Sobre = () => {
               </p>
             </div>
             
+            {/* Testimonials Section */}
+            <div className="mb-16">
+              <h2 className="text-3xl font-bold mb-8 text-ams-black border-l-4 border-ams-gold pl-4">O Que Dizem Sobre Nós</h2>
+              <div className="space-y-6">
+                <div className="p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                  <p className="text-gray-700 italic mb-4">
+                    "Antonio Marcos é um profissional gabaritado, de grande valia numa equipe, colaborador nato.
+                    Experiente na área comercial em fundos e bancos e de uma gentileza ímpar.
+                    Recomendo com credibilidade e eficiência de executivo exemplar."
+                  </p>
+                  <div className="flex items-center">
+                    <div>
+                      <p className="font-semibold text-ams-black">Douglas Kuroviski</p>
+                      <p className="text-ams-gold">Head Grandes Contas | Especialista | Hunter | Sales Trader l Tecnologia</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                  <p className="text-gray-700 italic mb-4">
+                    "Recomendo este excelente profissional para área comercial.
+                    Dinâmico, arrojado, vontade de vencer.
+                    Parabéns você é merecedor de grandes conquistas."
+                  </p>
+                  <div className="flex items-center">
+                    <div>
+                      <p className="font-semibold text-ams-black">Edilene Pontes Pontes</p>
+                      <p className="text-ams-gold">Gerente Comercial. Fidcs.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                  <p className="text-gray-700 italic mb-4">
+                    "Antonio Marcos é sinônimo de credibilidade, ética e transparência no mercado financeiro, altamente capacitado e solícito."
+                  </p>
+                  <div className="flex items-center">
+                    <div>
+                      <p className="font-semibold text-ams-black">Thiago Garcia</p>
+                      <p className="text-ams-gold">Especialista em Estratégias e Soluções Financeiras, FP&A, Controller.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
             <div className="text-center">
-              <Link 
-                to="/contato" 
+              <a 
+                href="https://wa.me/5511999285273"
+                target="_blank"
+                rel="noreferrer"
                 className="gold-button px-8 py-3 rounded-md font-medium text-lg inline-flex items-center"
               >
                 Entre em contato conosco
-              </Link>
+              </a>
             </div>
           </div>
         </div>

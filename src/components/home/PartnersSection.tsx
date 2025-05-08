@@ -15,7 +15,7 @@ const PartnersSection = () => {
   useEffect(() => {
     let intervalId: NodeJS.Timeout;
     
-    // Auto scroll the carousel
+    // Auto scroll the carousel - much slower now (approximately 60 seconds to complete one cycle)
     const autoScroll = () => {
       intervalId = setInterval(() => {
         if (carouselRef.current) {
@@ -29,12 +29,12 @@ const PartnersSection = () => {
               // Reset to beginning when reached the end
               scrollElement.scrollLeft = 0;
             } else {
-              // Scroll by a small amount
-              scrollElement.scrollLeft += 1;
+              // Scroll by a very small amount
+              scrollElement.scrollLeft += 0.3; // Reduced scrolling speed
             }
           }
         }
-      }, 30); // Slow scrolling speed
+      }, 30); // Keep the interval short but reduce the amount scrolled
     };
     
     autoScroll();
@@ -46,8 +46,8 @@ const PartnersSection = () => {
 
   return (
     <section className="py-16 md:py-20 bg-gradient-to-b from-ams-darkGray to-ams-black relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ams-gold/50 to-transparent"></div>
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ams-gold/50 to-transparent"></div>
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ams-gold/50 to-transparent w-1/2 mx-auto"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ams-gold/50 to-transparent w-1/2 mx-auto"></div>
       
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
@@ -79,7 +79,7 @@ const PartnersSection = () => {
                 if (scrollElement) {
                   (carouselRef.current as any).intervalId = setInterval(() => {
                     if (scrollElement) {
-                      scrollElement.scrollLeft += 1;
+                      scrollElement.scrollLeft += 0.3; // Reduced scrolling speed
                       if (scrollElement.scrollLeft + scrollElement.clientWidth >= scrollElement.scrollWidth) {
                         scrollElement.scrollLeft = 0;
                       }
@@ -99,7 +99,7 @@ const PartnersSection = () => {
                 "/lovable-uploads/68a674b3-42d7-4caa-97de-0d6d25468170.png",
                 "/lovable-uploads/03a2799b-6984-4e84-8b4f-f6db7a39c3f8.png"
               ].map((src, idx) => (
-                <CarouselItem key={idx} className="md:basis-1/3 lg:basis-1/4 px-4">
+                <CarouselItem key={idx} className="md:basis-1/3 lg:basis-1/4 px-6">
                   <motion.div 
                     style={{ opacity }}
                     whileHover={{ scale: 1.05 }}

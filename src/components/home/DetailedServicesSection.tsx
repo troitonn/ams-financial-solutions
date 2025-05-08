@@ -72,12 +72,12 @@ const DetailedServicesSection = () => {
     }
   };
   
-  // Auto scroll functionality
+  // Auto scroll functionality - much slower now (45 seconds complete cycle)
   useEffect(() => {
     const container = scrollContainerRef.current;
     let animationFrameId: number;
     let lastTime = 0;
-    const speed = 0.5; // pixels per millisecond, adjust as needed
+    const speed = 0.1; // Reduced speed for slower scrolling (pixels per millisecond)
     
     const autoScroll = (timestamp: number) => {
       if (container && autoScrolling) {
@@ -211,7 +211,7 @@ const DetailedServicesSection = () => {
 
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-ams-black to-ams-darkGray relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ams-gold/50 to-transparent"></div>
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ams-gold/50 to-transparent w-1/2 mx-auto"></div>
       
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
@@ -264,7 +264,8 @@ const DetailedServicesSection = () => {
         </div>
       </div>
       
-      <style jsx>{`
+      <style>
+        {`
         .hide-scrollbar::-webkit-scrollbar {
           display: none;
         }
@@ -272,7 +273,8 @@ const DetailedServicesSection = () => {
           -ms-overflow-style: none;
           scrollbar-width: none;
         }
-      `}</style>
+        `}
+      </style>
     </section>
   );
 };

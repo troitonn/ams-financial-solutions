@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 const AgroSection = () => {
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-ams-black to-ams-darkGray relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ams-gold/50 to-transparent"></div>
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ams-gold/50 to-transparent w-1/2 mx-auto"></div>
       
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -58,7 +58,8 @@ const AgroSection = () => {
         </div>
       </div>
       
-      <style jsx>{`
+      <style>
+        {`
         .droplet-shape {
           width: 100%;
           height: 400px;
@@ -67,7 +68,8 @@ const AgroSection = () => {
           box-shadow: 0 20px 40px rgba(0,0,0,0.3);
           border: 1px solid rgba(252, 204, 76, 0.3);
         }
-      `}</style>
+        `}
+      </style>
     </section>
   );
 };
