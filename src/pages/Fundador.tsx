@@ -12,7 +12,7 @@ const Fundador = () => {
       {/* Profile Section */}
       <section className="py-16 bg-gradient-to-b from-ams-black to-ams-darkGray md:py-[97px]">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-12 gap-12 items-start max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-12 gap-12 items-start max-w-5xl mx-auto py-[70px]">
             <div className="md:col-span-4">
               <div className="sticky top-24">
                 <div className="rounded-full overflow-hidden shadow-xl border-4 border-ams-gold/30 w-48 h-48 mx-auto mb-6">
