@@ -1,10 +1,7 @@
-
 import React from 'react';
 import { Building, Briefcase, ShieldCheck } from 'lucide-react';
-
 const BankPartnershipsSection = () => {
-  return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-ams-darkGray to-ams-black relative overflow-hidden">
+  return <section className="py-16 md:py-24 bg-gradient-to-b from-ams-darkGray to-ams-black relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ams-gold/50 to-transparent w-1/2 mx-auto"></div>
       
       <div className="container mx-auto px-4">
@@ -47,26 +44,8 @@ const BankPartnershipsSection = () => {
           </div>
         </div>
         
-        <div className="mt-16 flex justify-center gap-12 flex-wrap">
-          <div className="partnership-logo glass-card p-4 border border-ams-gold/30">
-            <div className="text-center text-ams-gold font-bold text-lg">Banco do Brasil</div>
-          </div>
-          <div className="partnership-logo glass-card p-4 border border-ams-gold/30">
-            <div className="text-center text-ams-gold font-bold text-lg">Bradesco</div>
-          </div>
-          <div className="partnership-logo glass-card p-4 border border-ams-gold/30">
-            <div className="text-center text-ams-gold font-bold text-lg">Itaú</div>
-          </div>
-          <div className="partnership-logo glass-card p-4 border border-ams-gold/30">
-            <div className="text-center text-ams-gold font-bold text-lg">Santander</div>
-          </div>
-          <div className="partnership-logo glass-card p-4 border border-ams-gold/30">
-            <div className="text-center text-ams-gold font-bold text-lg">BTG Pactual</div>
-          </div>
-        </div>
+        
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default BankPartnershipsSection;
