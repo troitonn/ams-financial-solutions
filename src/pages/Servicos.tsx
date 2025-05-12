@@ -122,7 +122,7 @@ const Servicos = () => {
         </div>
       </section>
       
-      {/* Services Content - More Professional */}
+      {/* Services Timeline - Professional Interleaved Format */}
       <section className="py-20 bg-gradient-to-b from-ams-darkGray to-ams-black md:py-[70px]">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ChartBar, Sprout, Home, BarChart3, FileSpreadsheet, ArrowRight } from 'lucide-react';
 
 interface ServiceTimelineItemProps {
   id: string;
@@ -11,6 +12,7 @@ interface ServiceTimelineItemProps {
   isActive: boolean;
   onClick: () => void;
   isLast?: boolean;
+  alignment: 'left' | 'right';
 }
 
 const ServiceTimelineItem: React.FC<ServiceTimelineItemProps> = ({
@@ -21,33 +23,65 @@ const ServiceTimelineItem: React.FC<ServiceTimelineItemProps> = ({
   content,
   isActive,
   onClick,
-  isLast = false
+  isLast = false,
+  alignment
 }) => {
   return (
-    <div id={id} className="relative pl-16 pb-16" onClick={onClick}>
-      {/* Timeline line */}
+    <div id={id} className="relative mb-16">
+      {/* Timeline connector */}
       {!isLast && (
-        <div className="absolute left-6 top-10 h-full w-px bg-gradient-to-b from-yellow-400/80 via-yellow-400/50 to-yellow-400/20"></div>
+        <div className="absolute left-1/2 transform -translate-x-1/2 top-12 h-full w-px bg-gradient-to-b from-ams-gold/80 via-ams-gold/40 to-ams-gold/20"></div>
       )}
       
-      {/* Service icon */}
-      <div className={`absolute left-0 top-0 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${isActive ? 'bg-yellow-400 text-gray-800' : 'bg-gray-200 text-gray-600'}`}>
-        {icon}
+      <div className={`flex items-start ${alignment === 'left' ? 'flex-row' : 'flex-row-reverse'}`}>
+        {/* Service icon - centered */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 top-0 z-10">
+          <div className={`w-14 h-14 rounded-full flex items-center justify-center transition-all duration-500 border-2 ${isActive ? 'bg-ams-gold text-ams-black border-ams-gold shadow-[0_0_15px_rgba(252,204,76,0.5)]' : 'bg-ams-darkGray text-ams-gold border-ams-gold/50'}`}>
+            {icon}
+          </div>
+        </div>
+        
+        {/* Content block */}
+        <div 
+          className={`w-5/12 pt-20 ${alignment === 'left' ? 'pr-6' : 'pl-6'}`}
+          onClick={onClick}
+        >
+          <div 
+            className={`glass-card p-6 border rounded-lg transition-all duration-500 cursor-pointer ${
+              isActive 
+                ? 'border-ams-gold shadow-[0_10px_30px_rgba(252,204,76,0.15)] transform scale-105' 
+                : 'border-gray-700 hover:border-ams-gold/50'
+            }`}
+          >
+            <h2 className="text-2xl md:text-3xl mb-2 font-bold gradient-gold">{title}</h2>
+            <p className="text-gray-400 mb-4">{description}</p>
+            
+            {!isActive && (
+              <button 
+                className="text-ams-gold flex items-center text-sm group"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onClick();
+                }}
+              >
+                Ver mais <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+            )}
+          </div>
+        </div>
+        
+        {/* Empty space for timeline balance */}
+        <div className="w-5/12"></div>
       </div>
       
-      {/* Service content */}
-      <div className={`transition-all duration-300 ${isActive ? 'scale-105' : 'scale-100'}`}>
-        <h2 className="text-2xl md:text-3xl mb-2 font-bold text-yellow-400">{title}</h2>
-        <p className="text-gray-600 mb-4">{description}</p>
-        
-        {isActive && (
-          <div className="mt-6 animate-fade-in">
-            <div className="prose prose-lg max-w-none text-gray-700">
-              {content}
-            </div>
+      {/* Expanded content */}
+      {isActive && (
+        <div className="mt-6 animate-fade-in max-w-3xl mx-auto bg-gradient-to-r from-transparent via-ams-darkGray to-transparent p-8 rounded-lg border border-ams-gold/20">
+          <div className="prose prose-lg max-w-none text-gray-300">
+            {content}
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -61,6 +95,7 @@ const ServiceTimeline: React.FC<{
       id: 'capital',
       title: "Capital de Giro",
       description: "Soluções financeiras para manter o fluxo de caixa saudável e as operações em pleno funcionamento.",
+      icon: <ChartBar className="w-7 h-7" />,
       content: (
         <>
           <p>
@@ -90,17 +125,18 @@ const ServiceTimeline: React.FC<{
       id: 'agronegocio',
       title: "Agronegócio",
       description: "Financiamentos e soluções específicas para produtores rurais e empresas do setor agrícola.",
+      icon: <Sprout className="w-7 h-7" />,
       content: (
         <>
           <p>
-            A A.M.S Negócios e Intermediação se destaca na prestação de serviços de agroranegócio, 
+            A A.M.S Negócios e Intermediação se destaca na prestação de serviços de agrofinanças, 
             oferecendo soluções financeiras especializadas para o setor agropecuário. Sabemos que o 
             agronegócio é um dos pilares da economia brasileira, e por isso, desenvolvemos estratégias 
             sob medida para atender às demandas específicas de produtores rurais, cooperativas e 
             empresas do setor.
           </p>
           <p>
-            Nosso serviço de agroranegócio abrange desde a captação de recursos para custeio e 
+            Nosso serviço de agrofinanças abrange desde a captação de recursos para custeio e 
             investimento até a intermediação de negociações complexas, sempre focados em garantir 
             que nossos clientes tenham o suporte financeiro necessário para crescer e prosperar. 
             Com uma equipe de especialistas e uma ampla rede de parceiros, conseguimos oferecer 
@@ -121,6 +157,7 @@ const ServiceTimeline: React.FC<{
       id: 'real-estate',
       title: "Real Estate",
       description: "Estratégias de investimento e financiamento para projetos imobiliários de todos os portes.",
+      icon: <Home className="w-7 h-7" />,
       content: (
         <>
           <p>
@@ -142,12 +179,6 @@ const ServiceTimeline: React.FC<{
             tomar decisões informadas e estratégicas. Nosso objetivo é otimizar o retorno sobre o 
             investimento e garantir a rentabilidade dos seus projetos imobiliários.
           </p>
-          <p>
-            Na AMS Negócios e Intermediação, seu sucesso no setor de Real Estate é a nossa prioridade. 
-            Estamos comprometidos em oferecer soluções completas e integradas que atendam às suas 
-            necessidades específicas e que impulsionem o crescimento e a valorização dos seus ativos 
-            imobiliários.
-          </p>
         </>
       )
     },
@@ -155,6 +186,7 @@ const ServiceTimeline: React.FC<{
       id: 'trade-finance',
       title: "Trade Finance",
       description: "Suporte financeiro para operações de comércio internacional e gestão de riscos cambiais.",
+      icon: <BarChart3 className="w-7 h-7" />,
       content: (
         <>
           <p>
@@ -177,12 +209,6 @@ const ServiceTimeline: React.FC<{
             cliente. Nosso serviço de Trade Finance inclui desde a análise de mercado e gestão de 
             riscos até a execução de estratégias de hedge e otimização de fluxos financeiros.
           </p>
-          <p>
-            Com a A.M.S Negócios e Intermediação, sua empresa terá o suporte necessário para navegar 
-            pelos mercados financeiros com segurança, minimizando riscos e maximizando oportunidades 
-            de crescimento e rentabilidade. Estamos aqui para ajudar você a alcançar seus objetivos 
-            financeiros com precisão e eficácia.
-          </p>
         </>
       )
     },
@@ -190,6 +216,7 @@ const ServiceTimeline: React.FC<{
       id: 'antecipacao',
       title: "Antecipação de Créditos",
       description: "Transforme recebíveis futuros em capital imediato para impulsionar seu negócio.",
+      icon: <FileSpreadsheet className="w-7 h-7" />,
       content: (
         <>
           <p>
@@ -208,20 +235,12 @@ const ServiceTimeline: React.FC<{
             gerenciar suas obrigações financeiras com maior facilidade.
           </p>
           <p>
-            A A,M,S Negócios e Intermediação trabalha em parceria com diversas instituições financeiras 
+            A A.M.S Negócios e Intermediação trabalha em parceria com diversas instituições financeiras 
             e fundos de investimento para oferecer as melhores condições do mercado, assegurando que a 
             antecipação de seus créditos seja realizada de forma rápida e com taxas competitivas. Além 
             disso, nossa equipe de especialistas está à disposição para auxiliar na escolha da melhor 
             estratégia de antecipação, garantindo que essa solução se alinhe perfeitamente às 
             necessidades e objetivos financeiros de sua empresa.
-          </p>
-          <p>
-            Ao optar pelo serviço de Antecipação de Créditos da A.M.S Negócios e Intermediação, você 
-            conta com a confiança e a expertise de uma empresa que entende as demandas do mercado e 
-            está comprometida em oferecer soluções financeiras eficientes e adaptadas à realidade do 
-            seu negócio. Maximize sua liquidez, mantenha sua empresa sempre pronta para crescer e 
-            explore novas oportunidades com a segurança que só a A.M.S Negócios e Intermediação 
-            pode oferecer.
           </p>
         </>
       ),
@@ -230,44 +249,32 @@ const ServiceTimeline: React.FC<{
   ];
   
   return (
-    <div className="py-8">
-      {services.map((service, index) => {
-        // Get icon component from props that would match the service ID
-        let IconComponent;
-        switch (service.id) {
-          case 'capital':
-            IconComponent = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>;
-            break;
-          case 'agronegocio':
-            IconComponent = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /><line x1="12" x2="12.01" y1="17" y2="17" /></svg>;
-            break;
-          case 'real-estate':
-            IconComponent = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>;
-            break;
-          case 'trade-finance':
-            IconComponent = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><line x1="12" x2="12" y1="2" y2="22" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>;
-            break;
-          case 'antecipacao':
-            IconComponent = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>;
-            break;
-          default:
-            IconComponent = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><circle cx="12" cy="12" r="10" /><line x1="12" x2="12" y1="8" y2="16" /><line x1="8" x2="16" y1="12" y2="12" /></svg>;
+    <div className="py-10">
+      {services.map((service, index) => (
+        <ServiceTimelineItem
+          key={index}
+          id={service.id}
+          title={service.title}
+          icon={service.icon}
+          description={service.description}
+          content={service.content}
+          isActive={activeService === service.id}
+          onClick={() => setActiveService(service.id)}
+          isLast={service.isLast}
+          alignment={index % 2 === 0 ? 'left' : 'right'}
+        />
+      ))}
+      
+      <style jsx>{`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
         }
         
-        return (
-          <ServiceTimelineItem
-            key={index}
-            id={service.id}
-            title={service.title}
-            icon={IconComponent}
-            description={service.description}
-            content={service.content}
-            isActive={activeService === service.id}
-            onClick={() => setActiveService(service.id)}
-            isLast={service.isLast}
-          />
-        );
-      })}
+        .animate-fade-in {
+          animation: fadeIn 0.5s ease-out forwards;
+        }
+      `}</style>
     </div>
   );
 };
