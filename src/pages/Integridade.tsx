@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import { ShieldCheck, CircleCheck, Shield, FileCheck, Briefcase, Lock, Balance } from 'lucide-react';
+import { ShieldCheck, CircleCheck, Shield, FileCheck, Briefcase, Lock, Scale } from 'lucide-react';
 
 const Integridade = () => {
   useEffect(() => {
@@ -60,7 +60,7 @@ const Integridade = () => {
               
               <div className="glass-card p-8 text-center hover:border-ams-gold transition-all duration-300 border border-ams-gold/30 rounded-lg transform hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(252,204,76,0.15)]">
                 <div className="w-20 h-20 bg-gradient-to-br from-ams-black to-ams-darkGray rounded-full flex items-center justify-center mx-auto mb-6 border border-ams-gold">
-                  <Balance className="w-10 h-10 text-ams-gold" />
+                  <Scale className="w-10 h-10 text-ams-gold" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4">Transparência</h3>
                 <p className="text-gray-300">
