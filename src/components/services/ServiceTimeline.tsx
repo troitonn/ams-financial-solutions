@@ -265,7 +265,8 @@ const ServiceTimeline: React.FC<{
         />
       ))}
       
-      <style jsx>{`
+      <style>
+        {`
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(10px); }
           to { opacity: 1; transform: translateY(0); }
@@ -274,7 +275,8 @@ const ServiceTimeline: React.FC<{
         .animate-fade-in {
           animation: fadeIn 0.5s ease-out forwards;
         }
-      `}</style>
+        `}
+      </style>
     </div>
   );
 };

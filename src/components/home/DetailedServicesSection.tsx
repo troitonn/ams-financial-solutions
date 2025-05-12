@@ -1,6 +1,6 @@
 
 import React, { useRef, useState, useEffect } from 'react';
-import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Sprout } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface DetailedServiceCardProps {
@@ -72,12 +72,20 @@ const DetailedServicesSection = () => {
     }
   };
   
-  // Auto scroll functionality - much slower now (5 minutes complete cycle)
+  // Auto scroll functionality - adjusted to 1 minute and 20 seconds (80 seconds)
   useEffect(() => {
     const container = scrollContainerRef.current;
     let animationFrameId: number;
     let lastTime = 0;
-    const speed = 0.008; // Significantly slower scrolling speed (pixels per millisecond)
+    
+    // Calculate the speed needed for 80 seconds complete cycle
+    // If container width is X and content width is Y, we need to scroll (Y - X) in 80 seconds
+    // Speed = (Y - X) / 80000 pixels per millisecond
+    const calculateSpeed = () => {
+      if (!container) return 0.02; // default fallback
+      const scrollDistance = container.scrollWidth - container.clientWidth;
+      return scrollDistance / 80000; // 80 seconds = 80000 milliseconds
+    };
     
     const autoScroll = (timestamp: number) => {
       if (container && autoScrolling) {
@@ -88,6 +96,8 @@ const DetailedServicesSection = () => {
         const deltaTime = timestamp - lastTime;
         lastTime = timestamp;
         
+        // Use dynamic speed based on content width
+        const speed = calculateSpeed();
         container.scrollLeft += speed * deltaTime;
         
         // Loop back to the start when reaching the end
@@ -259,6 +269,51 @@ const DetailedServicesSection = () => {
                   benefits={service.benefits}
                 />
               ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Agronegócio Section below Soluções Detalhadas */}
+        <div className="mt-24 bg-gradient-to-r from-ams-black/50 to-ams-darkGray/50 border border-ams-gold/20 rounded-lg p-8">
+          <div className="grid md:grid-cols-12 gap-8">
+            <div className="md:col-span-8">
+              <div className="flex items-center mb-5">
+                <Sprout className="text-ams-gold mr-3" size={24} />
+                <h3 className="text-2xl font-bold gradient-gold">Soluções para o Agronegócio</h3>
+              </div>
+              <p className="text-gray-300 mb-6">
+                Específicas para o setor agro, entendendo a sazonalidade e os desafios particulares do campo.
+              </p>
+              
+              <ul className="mb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+                {["Consultoria voltada ao setor agro, com foco em crédito rural", 
+                  "Apoio na renegociação de dívidas e estruturação de operações", 
+                  "Estratégias financeiras que atendem às peculiaridades do setor", 
+                  "Acompanhamento especializado para produtores e cooperativas"].map((item, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="text-ams-gold font-bold mr-2">✓</span>
+                    <span className="text-gray-300">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <Link 
+                to="/servicos#agronegocio" 
+                className="gold-button px-6 py-3 rounded-md font-medium inline-flex items-center group"
+              >
+                Conheça nossas soluções para o Agronegócio
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+            
+            <div className="md:col-span-4">
+              <div className="rounded-lg overflow-hidden h-full border border-ams-gold/20 shadow-[0_5px_20px_rgba(252,204,76,0.1)]">
+                <img 
+                  src="/lovable-uploads/33444add-1b89-4565-abc6-07f1793d6788.png" 
+                  alt="Agronegócio - Trator trabalhando em plantação sob céu azul" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>

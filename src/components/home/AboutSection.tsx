@@ -81,7 +81,7 @@ const AboutSection = () => {
           </div>
           <div className="relative">
             <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden gradient-border shadow-[0_0_30px_rgba(252,204,76,0.07)] transform hover:scale-105 transition-all duration-500">
-              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="Consultoria financeira moderna" className="object-cover w-full h-full" />
+              <img src="/lovable-uploads/120b0df1-552f-42b0-aaed-cf22d098575e.png" alt="Edifício empresarial moderno com palmeiras" className="object-cover w-full h-full" />
               <div className="absolute inset-0 bg-gradient-to-tr from-ams-black/60 to-transparent"></div>
             </div>
           </div>

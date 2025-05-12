@@ -8,7 +8,6 @@ import ServicesHighlightSection from '../components/home/ServicesHighlightSectio
 import DetailedServicesSection from '../components/home/DetailedServicesSection';
 import AboutSection from '../components/home/AboutSection';
 import ContactSection from '../components/home/ContactSection';
-import AgroSection from '../components/home/AgroSection';
 import BankPartnershipsSection from '../components/home/BankPartnershipsSection';
 
 const Index = () => {
@@ -22,7 +21,6 @@ const Index = () => {
       <FloatingWhatsAppButton />
       
       <HeroSection />
-      <AgroSection />
       <ServicesHighlightSection />
       <DetailedServicesSection />
       <BankPartnershipsSection />
