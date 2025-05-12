@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import { ShieldCheck, CircleCheck, Shield, FileCheck, Briefcase } from 'lucide-react';
+import { ShieldCheck, CircleCheck, Shield, FileCheck, Briefcase, Lock, Balance } from 'lucide-react';
 
 const Integridade = () => {
   useEffect(() => {
@@ -13,23 +13,27 @@ const Integridade = () => {
     <div className="min-h-screen flex flex-col bg-ams-black">
       <NavBar />
       
-      {/* Hero Section */}
+      {/* Hero Section - More elegant and professional */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-ams-black">
         <div className="absolute inset-0 z-0 opacity-40">
           <div className="bg-gradient-radial from-ams-gold/30 to-transparent absolute inset-0"></div>
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center opacity-10"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center text-white">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 gradient-gold glow-text">Integridade</h1>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 gradient-gold glow-text tracking-tight">Integridade</h1>
             <p className="text-xl md:text-2xl font-semibold text-zinc-50">
               Construindo relações duradouras baseadas em confiança e transparência
             </p>
           </div>
         </div>
+        
+        {/* Elegant separator */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ams-gold/60 to-transparent w-2/3 mx-auto"></div>
       </section>
       
-      {/* Valores de Integridade com design aprimorado */}
+      {/* Valores de Integridade - Mais elegante e profissional */}
       <section className="py-20 md:py-28 bg-gradient-to-b from-ams-black to-ams-darkGray">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -56,7 +60,7 @@ const Integridade = () => {
               
               <div className="glass-card p-8 text-center hover:border-ams-gold transition-all duration-300 border border-ams-gold/30 rounded-lg transform hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(252,204,76,0.15)]">
                 <div className="w-20 h-20 bg-gradient-to-br from-ams-black to-ams-darkGray rounded-full flex items-center justify-center mx-auto mb-6 border border-ams-gold">
-                  <ShieldCheck className="w-10 h-10 text-ams-gold" />
+                  <Balance className="w-10 h-10 text-ams-gold" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4">Transparência</h3>
                 <p className="text-gray-300">
@@ -80,7 +84,7 @@ const Integridade = () => {
         </div>
       </section>
       
-      {/* Nosso Compromisso - Design aprimorado */}
+      {/* Nosso Compromisso - Design aprimorado e mais profissional */}
       <section className="py-20 md:py-28 bg-gradient-to-b from-ams-darkGray to-ams-black relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-ams-gold/40 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-ams-gold/40 to-transparent"></div>
@@ -89,23 +93,24 @@ const Integridade = () => {
           <div className="max-w-4xl mx-auto">
             <div className="glass-card p-10 md:p-14 border border-ams-gold/30 rounded-lg relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-radial from-ams-gold/10 to-transparent opacity-40 z-0"></div>
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-radial from-ams-gold/10 to-transparent opacity-30 z-0"></div>
               
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center gradient-gold relative z-10">Nosso Compromisso</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center gradient-gold relative z-10">Nosso Compromisso com a Integridade</h2>
               
               <div className="space-y-6 text-gray-200 relative z-10">
-                <p className="leading-relaxed">
+                <p className="leading-relaxed text-center mb-8">
                   Na A.M.S, nosso compromisso com a integridade vai além de palavras – é demonstrado em nossas ações diárias. 
                   Acreditamos que o sucesso sustentável só é possível quando construído sobre uma base ética sólida.
                 </p>
                 
-                <div className="grid md:grid-cols-2 gap-6 my-10">
+                <div className="grid md:grid-cols-2 gap-8 my-10">
                   <div className="flex items-start">
                     <div className="bg-ams-gold/20 p-3 rounded-full mr-4">
-                      <FileCheck className="w-6 h-6 text-ams-gold" />
+                      <Lock className="w-6 h-6 text-ams-gold" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-white mb-2">Compliance Rigoroso</h3>
-                      <p className="text-gray-300 text-sm">Nossa equipe é treinada para aderir aos mais rigorosos padrões éticos e regulatórios.</p>
+                      <p className="text-gray-300 text-sm">Nossa equipe é treinada para aderir aos mais rigorosos padrões éticos e regulatórios, garantindo segurança em todas as operações.</p>
                     </div>
                   </div>
                   
@@ -115,12 +120,32 @@ const Integridade = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-white mb-2">Soluções Responsáveis</h3>
-                      <p className="text-gray-300 text-sm">Desenvolvemos apenas soluções financeiras que realmente beneficiam nossos clientes.</p>
+                      <p className="text-gray-300 text-sm">Desenvolvemos apenas soluções financeiras que realmente beneficiam nossos clientes, com foco no crescimento sustentável a longo prazo.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="bg-ams-gold/20 p-3 rounded-full mr-4">
+                      <FileCheck className="w-6 h-6 text-ams-gold" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-white mb-2">Compromisso com a Verdade</h3>
+                      <p className="text-gray-300 text-sm">Comprometemo-nos a fornecer informações precisas e completas em todas as nossas comunicações, desde o primeiro contato até a conclusão da operação.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="bg-ams-gold/20 p-3 rounded-full mr-4">
+                      <ShieldCheck className="w-6 h-6 text-ams-gold" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-white mb-2">Confidencialidade</h3>
+                      <p className="text-gray-300 text-sm">Protegemos rigorosamente todas as informações dos clientes, garantindo a segurança e privacidade dos dados compartilhados conosco.</p>
                     </div>
                   </div>
                 </div>
                 
-                <p className="leading-relaxed">
+                <p className="leading-relaxed text-center">
                   Trabalhamos continuamente para manter e fortalecer nossa cultura de integridade, reconhecendo que 
                   isso é fundamental para a confiança que nossos clientes depositam em nós e para o impacto positivo 
                   que buscamos gerar no mercado financeiro.
@@ -141,7 +166,7 @@ const Integridade = () => {
         </div>
       </section>
       
-      {/* Depoimentos Redesenhados */}
+      {/* Depoimentos Redesenhados - Design mais profissional */}
       <section className="py-20 md:py-28 bg-gradient-to-b from-ams-black to-ams-darkGray relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-ams-gold/40 to-transparent"></div>
         
@@ -195,8 +220,7 @@ const Integridade = () => {
                 </svg>
               </div>
               <p className="text-gray-300 mb-6 italic leading-relaxed">
-                "Em um mercado tão complexo como o financeiro, ter um parceiro que prioriza a integridade faz toda a diferença. 
-                A A.M.S sempre nos orientou pelo caminho correto, mesmo quando não era o mais fácil."
+                "Antonio Marcos é sinônimo de credibilidade, ética e transparência no mercado financeiro, altamente capacitado e solícito. Um profissional que faz a diferença em qualquer equipe."
               </p>
               <div className="pt-4 border-t border-ams-gold/20">
                 <p className="font-semibold text-white">Thiago Garcia</p>

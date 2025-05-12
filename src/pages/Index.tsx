@@ -22,9 +22,9 @@ const Index = () => {
       <FloatingWhatsAppButton />
       
       <HeroSection />
+      <AgroSection />
       <ServicesHighlightSection />
       <DetailedServicesSection />
-      <AgroSection />
       <BankPartnershipsSection />
       <AboutSection />
       <ContactSection />

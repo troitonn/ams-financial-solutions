@@ -39,8 +39,8 @@ const AgroSection = () => {
           <div className="order-1 md:order-2 mb-8 md:mb-0 transform -rotate-6">
             <div className="droplet-shape overflow-hidden relative">
               <img 
-                src="/lovable-uploads/4d595c70-259f-4a30-877b-7e41dec751a1.png" 
-                alt="Agronegócio - Agricultor examinando plantas no campo" 
+                src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" 
+                alt="Agronegócio - Trator trabalhando em plantação sob céu azul" 
                 className="w-full h-full object-cover" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ams-black to-transparent opacity-30"></div>
