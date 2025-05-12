@@ -1,29 +1,35 @@
+
 import React from 'react';
 import { ArrowRight, Sprout } from 'lucide-react';
+
 const AgroSection = () => {
-  return <section className="py-16 md:py-24 bg-gradient-to-b from-ams-black to-ams-darkGray relative overflow-hidden">
+  return (
+    <section className="py-16 md:py-24 bg-gradient-to-b from-ams-black to-ams-darkGray relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ams-gold/50 to-transparent w-1/2 mx-auto"></div>
       
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="order-2 md:order-1 mx-[12px]">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 gradient-gold glow-text">
-              Soluções para o Agronegócio
-            </h2>
-            
             <p className="text-gray-300 mb-6">
-              Desenvolvemos estratégias financeiras específicas para o setor agro, 
-              entendendo a sazonalidade e os desafios particulares do campo.
+              Específicas para o setor agro, entendendo a sazonalidade e os desafios particulares do campo.
             </p>
             
             <ul className="mb-8 space-y-3">
-              {["Consultoria voltada ao setor agro, com foco em crédito rural", "Apoio na renegociação de dívidas e estruturação de operações", "Estratégias financeiras que atendem às peculiaridades do setor", "Acompanhamento especializado para produtores e cooperativas"].map((item, index) => <li key={index} className="flex items-start">
+              {["Consultoria voltada ao setor agro, com foco em crédito rural", 
+                "Apoio na renegociação de dívidas e estruturação de operações", 
+                "Estratégias financeiras que atendem às peculiaridades do setor", 
+                "Acompanhamento especializado para produtores e cooperativas"].map((item, index) => (
+                <li key={index} className="flex items-start">
                   <span className="text-ams-gold mr-2">✓</span>
                   <span>{item}</span>
-                </li>)}
+                </li>
+              ))}
             </ul>
             
-            <a href="https://wa.me/5511999285273?text=Olá,%20tenho%20interesse%20em%20saber%20mais%20sobre%20as%20soluções%20para%20o%20Agronegócio" target="_blank" rel="noreferrer" className="gold-button px-6 py-3 rounded-md font-medium inline-flex items-center group">
+            <a href="https://wa.me/5511999285273?text=Olá,%20tenho%20interesse%20em%20saber%20mais%20sobre%20as%20soluções%20para%20o%20Agronegócio" 
+               target="_blank" 
+               rel="noreferrer" 
+               className="gold-button px-6 py-3 rounded-md font-medium inline-flex items-center group">
               Fale com um especialista em agronegócio
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </a>
@@ -31,7 +37,11 @@ const AgroSection = () => {
           
           <div className="order-1 md:order-2 mb-8 md:mb-0 transform -rotate-6">
             <div className="droplet-shape overflow-hidden relative">
-              <img src="/lovable-uploads/4d595c70-259f-4a30-877b-7e41dec751a1.png" alt="Agronegócio - Agricultor examinando plantas no campo" className="w-full h-full object-cover" />
+              <img 
+                src="/lovable-uploads/4d595c70-259f-4a30-877b-7e41dec751a1.png" 
+                alt="Agronegócio - Agricultor examinando plantas no campo" 
+                className="w-full h-full object-cover" 
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-ams-black to-transparent opacity-0"></div>
             </div>
           </div>
@@ -50,6 +60,8 @@ const AgroSection = () => {
         }
         `}
       </style>
-    </section>;
+    </section>
+  );
 };
+
 export default AgroSection;

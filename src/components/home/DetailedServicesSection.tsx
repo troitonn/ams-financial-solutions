@@ -1,4 +1,3 @@
-
 import React, { useRef, useState, useEffect } from 'react';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -72,12 +71,12 @@ const DetailedServicesSection = () => {
     }
   };
   
-  // Auto scroll functionality - much slower now (45 seconds complete cycle)
+  // Auto scroll functionality - much slower now (2 minutes complete cycle)
   useEffect(() => {
     const container = scrollContainerRef.current;
     let animationFrameId: number;
     let lastTime = 0;
-    const speed = 0.1; // Reduced speed for slower scrolling (pixels per millisecond)
+    const speed = 0.03; // Even slower scrolling speed (pixels per millisecond)
     
     const autoScroll = (timestamp: number) => {
       if (container && autoScrolling) {
@@ -153,6 +152,17 @@ const DetailedServicesSection = () => {
 
   const services = [
     {
+      title: "Agrofinanças – Soluções para o Agronegócio",
+      description: "Consultoria voltada ao setor agro, com foco em crédito rural, gestão financeira e expansão.",
+      imageUrl: "/lovable-uploads/0e55865e-da26-4cf2-a36b-e72345b184d1.png",
+      linkTo: "/servicos#agronegocio",
+      benefits: [
+        "Apoio na renegociação de dívidas e busca por linhas de crédito",
+        "Estratégias financeiras específicas para o setor agro",
+        "Acompanhamento especializado para produtores e cooperativas"
+      ]
+    },
+    {
       title: "Consultoria Financeira Personalizada",
       description: "Soluções sob medida para empresas que buscam eficiência financeira e crescimento sustentável.",
       imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80",
@@ -194,17 +204,6 @@ const DetailedServicesSection = () => {
         "Reforço imediato do fluxo de caixa sem comprometer operações",
         "Parceria com fundos de investimento e instituições financeiras",
         "Taxas competitivas e agilidade na operação"
-      ]
-    },
-    {
-      title: "Agrofinanças – Soluções para o Agronegócio",
-      description: "Consultoria voltada ao setor agro, com foco em crédito rural, gestão financeira e expansão.",
-      imageUrl: "/lovable-uploads/0e55865e-da26-4cf2-a36b-e72345b184d1.png",
-      linkTo: "/servicos#agronegocio",
-      benefits: [
-        "Apoio na renegociação de dívidas e busca por linhas de crédito",
-        "Estratégias financeiras específicas para o setor agro",
-        "Acompanhamento especializado para produtores e cooperativas"
       ]
     }
   ];
