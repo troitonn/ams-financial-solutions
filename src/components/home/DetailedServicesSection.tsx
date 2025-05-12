@@ -1,3 +1,4 @@
+
 import React, { useRef, useState, useEffect } from 'react';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -71,12 +72,12 @@ const DetailedServicesSection = () => {
     }
   };
   
-  // Auto scroll functionality - much slower now (2 minutes complete cycle)
+  // Auto scroll functionality - much slower now (5 minutes complete cycle)
   useEffect(() => {
     const container = scrollContainerRef.current;
     let animationFrameId: number;
     let lastTime = 0;
-    const speed = 0.03; // Even slower scrolling speed (pixels per millisecond)
+    const speed = 0.008; // Significantly slower scrolling speed (pixels per millisecond)
     
     const autoScroll = (timestamp: number) => {
       if (container && autoScrolling) {
@@ -121,7 +122,7 @@ const DetailedServicesSection = () => {
   // Mouse leave and mouse up handlers
   const handleMouseLeaveOrUp = () => {
     setIsMouseDown(false);
-    setTimeout(() => setAutoScrolling(true), 2000); // Resume auto-scrolling after 2 seconds
+    setTimeout(() => setAutoScrolling(true), 3000); // Resume auto-scrolling after 3 seconds
   };
 
   // Mouse move handler

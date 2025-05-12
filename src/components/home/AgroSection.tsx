@@ -10,6 +10,7 @@ const AgroSection = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="order-2 md:order-1 mx-[12px]">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 gradient-gold">Soluções para o Agronegócio</h2>
             <p className="text-gray-300 mb-6">
               Específicas para o setor agro, entendendo a sazonalidade e os desafios particulares do campo.
             </p>
@@ -21,7 +22,7 @@ const AgroSection = () => {
                 "Acompanhamento especializado para produtores e cooperativas"].map((item, index) => (
                 <li key={index} className="flex items-start">
                   <span className="text-ams-gold mr-2">✓</span>
-                  <span>{item}</span>
+                  <span className="text-gray-300">{item}</span>
                 </li>
               ))}
             </ul>
@@ -42,7 +43,7 @@ const AgroSection = () => {
                 alt="Agronegócio - Agricultor examinando plantas no campo" 
                 className="w-full h-full object-cover" 
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ams-black to-transparent opacity-0"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-ams-black to-transparent opacity-30"></div>
             </div>
           </div>
         </div>

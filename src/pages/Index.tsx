@@ -9,6 +9,7 @@ import DetailedServicesSection from '../components/home/DetailedServicesSection'
 import AboutSection from '../components/home/AboutSection';
 import ContactSection from '../components/home/ContactSection';
 import AgroSection from '../components/home/AgroSection';
+import BankPartnershipsSection from '../components/home/BankPartnershipsSection';
 
 const Index = () => {
   useEffect(() => {
@@ -24,6 +25,7 @@ const Index = () => {
       <ServicesHighlightSection />
       <DetailedServicesSection />
       <AgroSection />
+      <BankPartnershipsSection />
       <AboutSection />
       <ContactSection />
       
