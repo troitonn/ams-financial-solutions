@@ -1,15 +1,12 @@
-
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import ServiceTimeline from '../components/services/ServiceTimeline';
 import { ShieldCheck, Building, Briefcase, ChevronRight } from 'lucide-react';
-
 const Servicos = () => {
   const location = useLocation();
   const [activeService, setActiveService] = useState('capital');
-
   useEffect(() => {
     window.scrollTo(0, 0);
 
@@ -28,9 +25,7 @@ const Servicos = () => {
       }, 100);
     }
   }, [location]);
-
-  return (
-    <div className="min-h-screen flex flex-col bg-ams-black">
+  return <div className="min-h-screen flex flex-col bg-ams-black">
       <NavBar />
       
       {/* Hero Section - Elegant and Professional */}
@@ -109,10 +104,7 @@ const Servicos = () => {
               </p>
               
               <div className="mt-8">
-                <a href="https://wa.me/5511999285273?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20A.M.S" 
-                   target="_blank" 
-                   rel="noreferrer" 
-                   className="gold-button px-6 py-3 rounded-md font-medium inline-flex items-center group">
+                <a href="https://wa.me/5511999285273?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20A.M.S" target="_blank" rel="noreferrer" className="gold-button px-6 py-3 rounded-md font-medium inline-flex items-center group">
                   Fale com um especialista
                   <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </a>
@@ -177,8 +169,6 @@ const Servicos = () => {
       </section>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Servicos;
