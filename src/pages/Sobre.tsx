@@ -188,66 +188,14 @@ const Sobre = () => {
             
             {/* Testimonials Section - Design mais profissional */}
             <div className="mb-16">
-              <div className="flex items-center mb-8">
-                <div className="w-1.5 h-12 bg-gradient-to-b from-ams-gold to-ams-gold/40 mr-4"></div>
-                <h2 className="text-3xl font-bold text-ams-black">O Que Dizem Sobre Nós</h2>
-              </div>
+              
               
               <div className="grid md:grid-cols-2 gap-8">
-                <div className="p-8 border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow bg-white">
-                  <div className="mb-4 text-ams-gold">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" />
-                    </svg>
-                  </div>
-                  <p className="text-gray-700 italic mb-6 leading-relaxed">
-                    "Antonio Marcos é um profissional gabaritado, de grande valia numa equipe, colaborador nato.
-                    Experiente na área comercial em fundos e bancos e de uma gentileza ímpar.
-                    Recomendo com credibilidade e eficiência de executivo exemplar."
-                  </p>
-                  <div className="flex items-center">
-                    <div>
-                      <p className="font-semibold text-ams-black">Douglas Kuroviski</p>
-                      <p className="text-ams-gold">Head Grandes Contas | Especialista | Hunter | Sales Trader l Tecnologia</p>
-                    </div>
-                  </div>
-                </div>
                 
-                <div className="p-8 border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow bg-white">
-                  <div className="mb-4 text-ams-gold">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" />
-                    </svg>
-                  </div>
-                  <p className="text-gray-700 italic mb-6 leading-relaxed">
-                    "Recomendo este excelente profissional para área comercial.
-                    Dinâmico, arrojado, vontade de vencer.
-                    Parabéns você é merecedor de grandes conquistas."
-                  </p>
-                  <div className="flex items-center">
-                    <div>
-                      <p className="font-semibold text-ams-black">Edilene Pontes Pontes</p>
-                      <p className="text-ams-gold">Gerente Comercial. Fidcs.</p>
-                    </div>
-                  </div>
-                </div>
                 
-                <div className="p-8 border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow bg-white md:col-span-2">
-                  <div className="mb-4 text-ams-gold">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" />
-                    </svg>
-                  </div>
-                  <p className="text-gray-700 italic mb-6 leading-relaxed">
-                    "Antonio Marcos é sinônimo de credibilidade, ética e transparência no mercado financeiro, altamente capacitado e solícito."
-                  </p>
-                  <div className="flex items-center">
-                    <div>
-                      <p className="font-semibold text-ams-black">Thiago Garcia</p>
-                      <p className="text-ams-gold">Especialista em Estratégias e Soluções Financeiras, FP&A, Controller.</p>
-                    </div>
-                  </div>
-                </div>
+                
+                
+                
               </div>
             </div>
             
