@@ -1,16 +1,12 @@
-
 import React, { useEffect } from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import { ShieldCheck, CircleCheck, Shield, FileCheck, Briefcase, Lock, Scale } from 'lucide-react';
-
 const Integridade = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  return (
-    <div className="min-h-screen flex flex-col bg-ams-black">
+  return <div className="min-h-screen flex flex-col bg-ams-black">
       <NavBar />
       
       {/* Hero Section - More elegant and professional */}
@@ -22,10 +18,8 @@ const Integridade = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center text-white">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 gradient-gold glow-text tracking-tight">Integridade</h1>
-            <p className="text-xl md:text-2xl font-semibold text-zinc-50">
-              Construindo relações duradouras baseadas em confiança e transparência
-            </p>
+            
+            
           </div>
         </div>
         
@@ -153,8 +147,7 @@ const Integridade = () => {
               </div>
               
               <div className="mt-10 text-center relative z-10">
-                <a href="https://wa.me/5511999285273?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20A.M.S" target="_blank" rel="noreferrer" 
-                   className="gold-button px-8 py-3 rounded-md font-medium text-lg inline-flex items-center group">
+                <a href="https://wa.me/5511999285273?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20A.M.S" target="_blank" rel="noreferrer" className="gold-button px-8 py-3 rounded-md font-medium text-lg inline-flex items-center group">
                   Fale Conosco
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -232,8 +225,6 @@ const Integridade = () => {
       </section>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Integridade;
