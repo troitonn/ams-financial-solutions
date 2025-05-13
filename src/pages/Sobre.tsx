@@ -1,17 +1,13 @@
-
 import React, { useEffect } from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import { Shield, Building, Award, Users, Clock, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 const Sobre = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <NavBar />
       
       {/* Hero Section - More professional and elegant */}
@@ -23,10 +19,8 @@ const Sobre = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center text-white">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 gradient-gold glow-text">Sobre a A.M.S</h1>
-            <p className="text-xl md:text-2xl text-gray-100">
-              Consultoria financeira de alto desempenho para empresas que buscam crescimento sustentável
-            </p>
+            
+            
           </div>
         </div>
         
@@ -279,8 +273,6 @@ const Sobre = () => {
       </section>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Sobre;
