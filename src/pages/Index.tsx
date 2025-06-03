@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import FloatingWhatsAppButton from '../components/home/FloatingWhatsAppButton';
 import HeroSection from '../components/home/HeroSection';
 import ServicesHighlightSection from '../components/home/ServicesHighlightSection';
+import CapitalGiroSection from '../components/home/CapitalGiroSection';
 import DetailedServicesSection from '../components/home/DetailedServicesSection';
 import AboutSection from '../components/home/AboutSection';
 import ContactSection from '../components/home/ContactSection';
@@ -22,6 +23,7 @@ const Index = () => {
       
       <HeroSection />
       <ServicesHighlightSection />
+      <CapitalGiroSection />
       <DetailedServicesSection />
       <BankPartnershipsSection />
       <AboutSection />
