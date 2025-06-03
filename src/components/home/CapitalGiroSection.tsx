@@ -1,11 +1,8 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Clock, TrendingUp, Percent, Calendar } from 'lucide-react';
-
 const CapitalGiroSection = () => {
-  return (
-    <section className="py-12 md:py-16 bg-gradient-to-b from-ams-black to-ams-darkGray relative overflow-hidden">
+  return <section className="py-12 md:py-16 bg-gradient-to-b from-ams-black to-ams-darkGray relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ams-gold/50 to-transparent"></div>
       
       <div className="container mx-auto px-4">
@@ -15,12 +12,8 @@ const CapitalGiroSection = () => {
             <h2 className="text-2xl md:text-3xl font-bold mb-4 gradient-gold glow-text">
               CAPITAL DE GIRO
             </h2>
-            <p className="text-lg text-gray-200 mb-4 leading-relaxed max-w-4xl mx-auto">
-              Garantimos à sua empresa recursos rápidos e sob medida para manter as operações funcionando com tranquilidade.
-            </p>
-            <p className="text-gray-300 mb-8 leading-relaxed max-w-4xl mx-auto">
-              Ajudamos a fortalecer o fluxo de caixa para que você tenha segurança para crescer, investir e superar desafios financeiros do dia a dia. Com prazos flexíveis, carência e condições ajustadas à sua capacidade de pagamento, você começa a pagar somente quando estiver preparado.
-            </p>
+            
+            <p className="text-gray-300 mb-8 leading-relaxed max-w-4xl mx-auto">Ajudamos a fortalecer o fluxo de caixa para que você tenha segurança para crescer, investir e superar desafios financeiros do dia a dia. Com prazos flexíveis, carência e condições ajustadas à sua capacidade de pagamento, você começa a pagar somente quando estiver preparado!</p>
           </div>
 
           {/* Benefits Grid */}
@@ -75,26 +68,16 @@ const CapitalGiroSection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-center">
-            <Link 
-              to="/servicos#capital" 
-              className="gold-button px-5 py-2.5 rounded-md font-medium inline-flex items-center justify-center group text-sm"
-            >
+            <Link to="/servicos#capital" className="gold-button px-5 py-2.5 rounded-md font-medium inline-flex items-center justify-center group text-sm">
               Saiba mais sobre Capital de Giro
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <a 
-              href="https://wa.me/5511999285273" 
-              target="_blank" 
-              rel="noreferrer" 
-              className="px-5 py-2.5 rounded-md font-medium bg-transparent border border-ams-gold text-ams-gold hover:bg-ams-gold hover:text-ams-black transition duration-300 inline-flex items-center justify-center text-sm"
-            >
+            <a href="https://wa.me/5511999285273" target="_blank" rel="noreferrer" className="px-5 py-2.5 rounded-md font-medium bg-transparent border border-ams-gold text-ams-gold hover:bg-ams-gold hover:text-ams-black transition duration-300 inline-flex items-center justify-center text-sm">
               Fale com um consultor
             </a>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CapitalGiroSection;
