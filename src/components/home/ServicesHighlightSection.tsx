@@ -13,7 +13,7 @@ const ServicesHighlightSection = () => {
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 gradient-gold glow-text">Nossos Serviços</h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
-            Soluções financeiras personalizadas para as necessidades da sua empresa
+            Soluções financeiras para sua empresa
           </p>
         </div>
         
