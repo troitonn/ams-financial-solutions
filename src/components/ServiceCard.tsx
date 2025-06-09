@@ -1,9 +1,9 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Capital, ChemicalIcon, RealEstateAgency, ExchangeRate, JudicialIcon } from './ServiceIcons';
+import { Capital, ChemicalIcon, JudicialIcon } from './ServiceIcons';
 
-type ServiceIconType = 'capital' | 'chemical' | 'real-estate-agency' | 'exchange-rate' | 'judicial';
+type ServiceIconType = 'capital' | 'chemical' | 'judicial';
 
 interface ServiceCardProps {
   title: string;
@@ -26,10 +26,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         return <Capital className="w-6 h-6 text-ams-gold" />;
       case 'chemical':
         return <ChemicalIcon className="w-6 h-6 text-ams-gold" />;
-      case 'real-estate-agency':
-        return <RealEstateAgency className="w-6 h-6 text-ams-gold" />;
-      case 'exchange-rate':
-        return <ExchangeRate className="w-6 h-6 text-ams-gold" />;
       case 'judicial':
         return <JudicialIcon className="w-6 h-6 text-ams-gold" />;
       default:
