@@ -44,10 +44,6 @@ const DetailedServicesSection = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
-  const [isMouseDown, setIsMouseDown] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-  const [autoScrolling, setAutoScrolling] = useState(true);
   
   // Check if can scroll in either direction
   const checkScrollability = () => {
@@ -61,88 +57,14 @@ const DetailedServicesSection = () => {
   // Scroll left button handler
   const handleScrollLeft = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+      scrollContainerRef.current.scrollBy({ left: -400, behavior: 'smooth' });
     }
   };
 
   // Scroll right button handler
   const handleScrollRight = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
-    }
-  };
-  
-  // Auto scroll functionality - adjusted to 1 minute and 20 seconds (80 seconds)
-  useEffect(() => {
-    const container = scrollContainerRef.current;
-    let animationFrameId: number;
-    let lastTime = 0;
-    
-    // Calculate the speed needed for 80 seconds complete cycle
-    // If container width is X and content width is Y, we need to scroll (Y - X) in 80 seconds
-    // Speed = (Y - X) / 80000 pixels per millisecond
-    const calculateSpeed = () => {
-      if (!container) return 0.02; // default fallback
-      const scrollDistance = container.scrollWidth - container.clientWidth;
-      return scrollDistance / 80000; // 80 seconds = 80000 milliseconds
-    };
-    
-    const autoScroll = (timestamp: number) => {
-      if (container && autoScrolling) {
-        if (lastTime === 0) {
-          lastTime = timestamp;
-        }
-        
-        const deltaTime = timestamp - lastTime;
-        lastTime = timestamp;
-        
-        // Use dynamic speed based on content width
-        const speed = calculateSpeed();
-        container.scrollLeft += speed * deltaTime;
-        
-        // Loop back to the start when reaching the end
-        if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
-          container.scrollLeft = 0;
-        }
-        
-        checkScrollability();
-      }
-      animationFrameId = requestAnimationFrame(autoScroll);
-    };
-    
-    if (autoScrolling) {
-      animationFrameId = requestAnimationFrame(autoScroll);
-    }
-    
-    return () => {
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId);
-      }
-    };
-  }, [autoScrolling]);
-
-  // Mouse down handler for manual scrolling
-  const handleMouseDown = (e: React.MouseEvent) => {
-    setIsMouseDown(true);
-    setAutoScrolling(false);
-    setStartX(e.pageX - (scrollContainerRef.current?.offsetLeft || 0));
-    setScrollLeft(scrollContainerRef.current?.scrollLeft || 0);
-  };
-
-  // Mouse leave and mouse up handlers
-  const handleMouseLeaveOrUp = () => {
-    setIsMouseDown(false);
-    setTimeout(() => setAutoScrolling(true), 3000); // Resume auto-scrolling after 3 seconds
-  };
-
-  // Mouse move handler
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isMouseDown) return;
-    e.preventDefault();
-    const x = e.pageX - (scrollContainerRef.current?.offsetLeft || 0);
-    const walk = (x - startX) * 2; // Scroll speed multiplier
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollLeft = scrollLeft - walk;
+      scrollContainerRef.current.scrollBy({ left: 400, behavior: 'smooth' });
     }
   };
 
@@ -185,28 +107,6 @@ const DetailedServicesSection = () => {
       ]
     },
     {
-      title: "Real Estate – Investimentos Imobiliários",
-      description: "Assessoria completa em aquisição, desenvolvimento, gestão e alienação de ativos imobiliários.",
-      imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80",
-      linkTo: "/servicos#real-estate",
-      benefits: [
-        "Análise de mercado e identificação de oportunidades",
-        "Apoio a investidores na valorização de portfólios imobiliários",
-        "Elaboração de planos de negócios personalizados"
-      ]
-    },
-    {
-      title: "Trade Finance – Operações Estruturadas",
-      description: "Soluções para empresas que atuam em mercados voláteis ou com exposição cambial e de commodities.",
-      imageUrl: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80",
-      linkTo: "/servicos#trade-finance",
-      benefits: [
-        "Desenvolvimento de estratégias de hedge e operações financeiras",
-        "Análises de mercado com inteligência estratégica",
-        "Maximização de ganhos e mitigação de perdas financeiras"
-      ]
-    },
-    {
       title: "Antecipação de Créditos – Liquidez Imediata",
       description: "Transformação de vendas a prazo e recebíveis futuros em capital imediato para sua empresa.",
       imageUrl: "https://images.unsplash.com/photo-1559526324-593bc073d938?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80",
@@ -236,7 +136,7 @@ const DetailedServicesSection = () => {
           <button 
             onClick={handleScrollLeft} 
             disabled={!canScrollLeft}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-ams-black/80 border border-ams-gold/30 rounded-full p-2 text-white disabled:opacity-30 disabled:cursor-not-allowed"
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-ams-black/80 border border-ams-gold/30 rounded-full p-2 text-white disabled:opacity-30 disabled:cursor-not-allowed hover:bg-ams-gold/20 transition-all duration-300"
           >
             <ArrowLeft size={20} />
           </button>
@@ -244,7 +144,7 @@ const DetailedServicesSection = () => {
           <button 
             onClick={handleScrollRight} 
             disabled={!canScrollRight}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-ams-black/80 border border-ams-gold/30 rounded-full p-2 text-white disabled:opacity-30 disabled:cursor-not-allowed"
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-ams-black/80 border border-ams-gold/30 rounded-full p-2 text-white disabled:opacity-30 disabled:cursor-not-allowed hover:bg-ams-gold/20 transition-all duration-300"
           >
             <ArrowRight size={20} />
           </button>
@@ -253,10 +153,7 @@ const DetailedServicesSection = () => {
           <div 
             ref={scrollContainerRef}
             className="flex overflow-x-auto hide-scrollbar py-8 px-4"
-            onMouseDown={handleMouseDown}
-            onMouseLeave={handleMouseLeaveOrUp}
-            onMouseUp={handleMouseLeaveOrUp}
-            onMouseMove={handleMouseMove}
+            style={{ scrollBehavior: 'smooth' }}
           >
             <div className="flex space-x-6">
               {services.map((service, index) => (

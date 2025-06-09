@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 const Footer = () => {
@@ -49,16 +50,6 @@ const Footer = () => {
               <li>
                 <Link to="/servicos#agronegocio" className="text-gray-300 hover:text-ams-gold transition duration-300">
                   Agronegócio
-                </Link>
-              </li>
-              <li>
-                <Link to="/servicos#real-estate" className="text-gray-300 hover:text-ams-gold transition duration-300">
-                  Real Estate
-                </Link>
-              </li>
-              <li>
-                <Link to="/servicos#trade-finance" className="text-gray-300 hover:text-ams-gold transition duration-300">
-                  Trade Finance
                 </Link>
               </li>
               <li>

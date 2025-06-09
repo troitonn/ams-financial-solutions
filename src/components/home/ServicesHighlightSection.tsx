@@ -17,7 +17,7 @@ const ServicesHighlightSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
           <div className="perspective-1000">
             <ServiceCard 
               title="Capital de Giro" 
@@ -31,22 +31,6 @@ const ServicesHighlightSection = () => {
               title="Agronegócio" 
               icon="chemical" 
               link="/servicos#agronegocio"
-              className=""
-            />
-          </div>
-          <div className="perspective-1000">
-            <ServiceCard 
-              title="Real Estate" 
-              icon="real-estate-agency" 
-              link="/servicos#real-estate"
-              className=""
-            />
-          </div>
-          <div className="perspective-1000">
-            <ServiceCard 
-              title="Trade Finance" 
-              icon="exchange-rate" 
-              link="/servicos#trade-finance"
               className=""
             />
           </div>
