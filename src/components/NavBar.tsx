@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 const NavBar = () => {
@@ -35,13 +36,13 @@ const NavBar = () => {
             
             {/* Nossa essência dropdown - stays open while hovering on child elements */}
             <div className="relative" onMouseEnter={() => setDropdownOpen(true)} onMouseLeave={() => setDropdownOpen(false)}>
-              <button className="text-white hover:text-ams-gold font-medium transition duration-200 flex items-center uppercase">
+              <button className="text-white hover:text-ams-gold font-medium transition duration-200 flex items-center uppercase focus:outline-none">
                 Nossa essência
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div className={`absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-ams-black border border-ams-gold/20 transition-opacity duration-150 ${dropdownOpen ? 'opacity-100' : 'opacity-0 invisible'}`}>
+              <div className={`absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-ams-black transition-opacity duration-150 ${dropdownOpen ? 'opacity-100' : 'opacity-0 invisible'}`}>
                 <div className="py-1 glass-card">
                   <Link to="/sobre" className="block px-4 py-2 text-white hover:bg-ams-gold/10 hover:text-ams-gold">SOBRE NÓS</Link>
                   <Link to="/fundador" className="block px-4 py-2 text-white hover:bg-ams-gold/10 hover:text-ams-gold">FOUNDER</Link>
