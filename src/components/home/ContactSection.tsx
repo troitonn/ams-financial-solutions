@@ -54,8 +54,6 @@ const ContactSection = () => {
                 >
                   <option value="capital-de-giro">Capital de Giro</option>
                   <option value="agronegocio">Agronegócio</option>
-                  <option value="real-estate">Real Estate</option>
-                  <option value="trade-finance">Trade Finance</option>
                   <option value="antecipacao">Antecipação de Créditos</option>
                 </select>
               </div>
